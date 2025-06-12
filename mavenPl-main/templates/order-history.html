@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+
+<head class="crypt-dark">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crypt</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <link rel="icon" type="image/svg" href="../static/images/favicon.svg">
+</head>
+
+<body class="crypt-dark">
+    <section class="container-fluid d-sm-flex flex-row fixed-sidebar">
+        {% include 'sidebar.html' %}
+        <!-- Main Content -->
+        <div class="wrapper pb-4">
+            {% include 'navbar.html' %}
+
+            <!-- Body Content -->
+            <div class="d-flex flex-column animation-element">
+                <div class="tab-content card-bs">
+                    <h3 class="flex p-3">{{ _('Order History') }}</h3>
+                    <!-- Tabs -->
+                    <div class="flex p-2 p-sm-3 mb-4">
+                        <div class="nav nav-tabs nav-justified card-line card-bs p-1" role="tablist">
+                            <button class="nav-link fw-medium active" id="open-order-tab" data-bs-toggle="tab"
+                                    data-bs-target="#open-order-tab-pane" type="button"
+                                    aria-controls="open-order-tab-pane">{{ _('Open Orders') }}</button>
+                            <button class="nav-link fw-medium" id="order-history-tab" data-bs-toggle="tab"
+                                    data-bs-target="#order-history-tab-pane" type="button"
+                                    aria-controls="order-history-tab-pane">{{ _('Order History') }}</button>
+                        </div>
+                    </div>
+                    <!-- Open Order Table -->
+                    <div class="tab-pane fade show active" id="open-order-tab-pane" aria-labelledby="open-order-tab"
+                         tabindex="0">
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table table-dark mb-0">
+                                <thead>
+                                    <tr class="mb-0">
+                                        <th scope="col" class="underline">{{ _('Date') }}</th>
+                                        <th scope="col" class="underline">{{ _('Pair') }}</th>
+                                        <th scope="col" class="underline">{{ _('Order Type') }}</th>
+                                        <th scope="col" class="underline">{{ _('Side') }}</th>
+                                        <th scope="col" class="underline">{{ _('Enter Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Take Profit') }}</th>
+                                        <th scope="col" class="underline">{{ _('Stop Loss') }}</th>
+                                        <th scope="col" class="underline">{{ _('Amount') }}</th>
+                                        <th scope="col" class="underline">{{ _('Current Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Total') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if open_orders %}
+                                        {% for order in open_orders %}
+                                            <tr class="align-middle">
+                                                <td class="fw-medium">{% if order.formatted_date %}{{ order.formatted_date }}{% endif %}</td>
+                                                <td class="fw-medium">{{ order.pair.pair }}</td>
+                                                <td class="encrypted fw-medium">{{ _('Market') }}</td>
+                                                <td class="fw-medium {% if order.type == 'buy' %}text-primary{% else %}text-danger{% endif %}">{{ order.type }}</td>
+                                                <td class="fw-medium">{{ order.enterPrice }}</td>
+                                                <td class="fw-medium">{{ order.takeProfit }}</td>
+                                                <td class="fw-medium">{{ order.stopLoss }}</td>
+                                                <td class="encrypted fw-medium">{{ order.amount }}</td>
+                                                <td class="encrypted fw-medium">{{ order.currentPrice }}</td>
+                                                <td class="encrypted fw-medium">{{ order.profit  }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr class="align-middle">
+                                            <td colspan="8" class="no-orders text-center">
+                                                <img src="../static/images/empty.svg" alt="no-orders">
+                                                <p class="crypt-grayscale-600 pb-3">{{ _('No records') }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Order History Table -->
+                    <div class="tab-pane fade" id="order-history-tab-pane" role="tabpanel"
+                         aria-labelledby="order-history-tab" tabindex="0">
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover mb-0">
+                                <thead>
+                                    <tr class="mb-0">
+                                        <th scope="col" class="underline">{{ _('Date') }}</th>
+                                        <th scope="col" class="underline">{{ _('Pair') }}</th>
+                                        <th scope="col" class="underline">{{ _('Order Type') }}</th>
+                                        <th scope="col" class="underline">{{ _('Side') }}</th>
+                                        <th scope="col" class="underline">{{ _('Enter Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Take Profit') }}</th>
+                                        <th scope="col" class="underline">{{ _('Stop Loss') }}</th>
+                                        <th scope="col" class="underline">{{ _('Amount') }}</th>
+                                        <th scope="col" class="underline">{{ _('Current Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Total') }}</th>
+                                        <th scope="col" class="underline">{{ _('Status') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% if order_history %}
+                                        {% for order in order_history %}
+                                            <tr class="align-middle">
+                                                <td class="fw-medium">{% if order.formatted_date %}{{ order.formatted_date }}{% endif %}</td>
+                                                <td class="fw-medium">{{ order.pair.pair }}</td>
+                                                <td class="encrypted fw-medium">{{ _('Market') }}</td>
+                                                <td class="fw-medium {% if order.type == 'buy' %}text-primary{% else %}text-danger{% endif %}">{{ order.type }}</td>
+                                                <td class="fw-medium">{{ order.enterPrice }}</td>
+                                                <td class="fw-medium">{{ order.takeProfit }}</td>
+                                                <td class="fw-medium">{{ order.stopLoss }}</td>
+                                                <td class="encrypted fw-medium">{{ order.amount }}</td>
+                                                <td class="encrypted fw-medium">{{ order.currentPrice }}</td>
+                                                <td class="encrypted fw-medium">{{ order.profit  }}</td>
+                                                <td>
+                                                    <a class="link-primary fw-bold ms-3" href="#!">{{ _('Closed') }}</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <tr class="align-middle">
+                                            <td colspan="9" class="no-orders text-center">
+                                                <img src="../static/images/empty.svg" alt="no-orders">
+                                                <p class="crypt-grayscale-600 pb-3">{{ _('No records') }}</p>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'payment_modal.html' %}
+    </section>
+
+    <!-- Main Content End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/main.js"></script>
+
+ <script>
+
+    document.getElementById('paymentMethodWithdraw').addEventListener('change', function() {
+        const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+          const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+        if (this.value === 'ERC20' || this.value === 'TRC20') {
+            walletAddressInput.style.display = 'flex';
+              cardNumberInput.style.display = 'none';
+        } else {
+            walletAddressInput.style.display = 'none';
+              cardNumberInput.style.display = 'flex';
+        }
+    });
+
+        window.addEventListener('load', function() {
+            const paymentMethodSelect = document.getElementById('paymentMethodWithdraw');
+            const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+            const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+
+            if (paymentMethodSelect && (paymentMethodSelect.value === 'ERC20' || paymentMethodSelect.value === 'TRC20')) {
+                walletAddressInput.style.display = 'flex';
+                cardNumberInput.style.display = 'none';
+            } else {
+                walletAddressInput.style.display = 'none';
+                cardNumberInput.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+
+</html>

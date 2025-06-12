@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "react-datepicker/dist/react-datepicker.css";
+
+/* Приклад стилів Tailwind + кастом */
+.react-datepicker-popper {
+    z-index: 9999; /* щоб перекрити інші елементи */
+}
+
+/* Базові стилі самого календаря */
+.react-datepicker {
+    border-radius: 0.5rem; /* заокруглення */
+    border: 1px solid #e2e8f0; /* сіра рамка (Tailwind gray-200) */
+    font-size: 0.875rem; /* text-sm */
+    /* Можна ще додати фоновий колір, якщо треба */
+}
+
+.react-datepicker__header {
+    background-color: #f8fafc; /* Tailwind gray-50 */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.react-datepicker__current-month {
+    color: #374151; /* text-gray-700 */
+    font-weight: 600; /* напівжирний */
+}
+
+/* Дні тижня */
+.react-datepicker__day-names {
+    color: #6b7280; /* text-gray-500 */
+}
+
+/* Звичайні дні */
+.react-datepicker__day {
+    border-radius: 0.25rem; /* трішки заокруглення */
+    margin: 0.2rem;
+    transition: background-color 0.2s;
+}
+.react-datepicker__day:hover {
+    background-color: #e0f2fe; /* hover:bg-cyan-100 */
+}
+
+/* Вибраний день */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background-color: #3b82f6 !important; /* bg-blue-500 */
+    color: #fff !important;
+}
+
+/* День сьогодні */
+.react-datepicker__day--today {
+    font-weight: 600;
+    border: 1px solid #3b82f6;
+}
+
+/* Вимкнені дні (поза діапазоном) */
+.react-datepicker__day--disabled {
+    color: #9ca3af; /* text-gray-400 */
+    opacity: 0.6;
+}
+
+
+
+/* Глобальні стилі */
+body {
+    @apply bg-background text-textPrimary font-sans;
+}
+
+/* Компонент кнопки */
+.btn {
+    @apply px-4 py-2 rounded bg-primary text-white shadow-btn transition duration-200 hover:bg-blue-700;
+}
+
+/* Стилізація формових елементів */
+.input {
+    @apply w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.btn-icon {
+    @apply inline-flex items-center justify-center p-2 rounded transition-colors duration-200;
+    /* p-2: невеликий паддінг, rounded: заокруглені кути, transition-colors: плавна зміна кольору */
+}
+

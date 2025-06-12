@@ -1,0 +1,371 @@
+# Polish translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-01-31 16:45+0200\n"
+"PO-Revision-Date: 2025-01-31 12:51+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pl\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: app.py:71
+msgid "Wrong email or password"
+msgstr "Nieprawidłowy email lub hasło"
+
+#: templates/exchange.html:63 templates/exchange.html:449
+#: templates/order-history.html:63 templates/order-history.html:112
+msgid "Market"
+msgstr "Rynek"
+
+#: templates/exchange.html:79 templates/exchange.html:115
+msgid "Selected Pair"
+msgstr "Wybrana Para"
+
+#: templates/exchange.html:86 templates/exchange.html:121
+#: templates/exchange.html:410 templates/exchange.html:437
+#: templates/order-history.html:52 templates/order-history.html:100
+msgid "Amount"
+msgstr "Ilość"
+
+#: templates/exchange.html:87 templates/exchange.html:122
+msgid "Enter amount"
+msgstr "Wprowadź ilość"
+
+#: templates/exchange.html:91 templates/exchange.html:126
+#: templates/exchange.html:408 templates/exchange.html:435
+#: templates/order-history.html:50 templates/order-history.html:98
+msgid "Take Profit"
+msgstr "Take Profit"
+
+#: templates/exchange.html:96 templates/exchange.html:131
+#: templates/exchange.html:409 templates/exchange.html:436
+#: templates/order-history.html:51 templates/order-history.html:99
+msgid "Stop Loss"
+msgstr "Stop Loss"
+
+#: templates/exchange.html:102
+msgid "Buy"
+msgstr "Kup"
+
+#: templates/exchange.html:137
+msgid "Sell"
+msgstr "Sprzedaj"
+
+#: templates/exchange.html:153
+msgid "Crypto"
+msgstr "Krypto"
+
+#: templates/exchange.html:157
+msgid "Forex"
+msgstr "Forex"
+
+#: templates/exchange.html:161
+#, fuzzy
+msgid "Stocks"
+msgstr "Dokumenty"
+
+#: templates/exchange.html:164
+msgid "All"
+msgstr "Wszystko"
+
+#: templates/exchange.html:175 templates/exchange.html:229
+#: templates/exchange.html:282 templates/exchange.html:334
+msgid "Pairs"
+msgstr "Pary"
+
+#: templates/exchange.html:176 templates/exchange.html:230
+#: templates/exchange.html:283 templates/exchange.html:335
+#, fuzzy
+msgid "Price"
+msgstr "Prywatność"
+
+#: templates/exchange.html:215 templates/exchange.html:268
+#: templates/exchange.html:320 templates/exchange.html:372
+msgid "Немає пар"
+msgstr "Brak par"
+
+#: templates/exchange.html:389
+msgid "Open Order"
+msgstr "Otwarte Zamówienia"
+
+#: templates/exchange.html:392 templates/navbar.html:286
+#: templates/order-history.html:25 templates/order-history.html:34
+#: templates/sidebar.html:78 templates/sidebar.html:93
+msgid "Order History"
+msgstr "Historia Zamówień"
+
+#: templates/exchange.html:403 templates/exchange.html:430
+#: templates/order-history.html:45 templates/order-history.html:93
+msgid "Date"
+msgstr "Data"
+
+#: templates/exchange.html:404 templates/exchange.html:431
+#: templates/order-history.html:46 templates/order-history.html:94
+msgid "Pair"
+msgstr "Para"
+
+#: templates/exchange.html:405 templates/exchange.html:432
+#: templates/order-history.html:47 templates/order-history.html:95
+msgid "Order Type"
+msgstr "Typ Zamówienia"
+
+#: templates/exchange.html:406 templates/exchange.html:433
+#: templates/order-history.html:48 templates/order-history.html:96
+msgid "Side"
+msgstr "Strona"
+
+#: templates/exchange.html:407 templates/exchange.html:434
+#: templates/order-history.html:49 templates/order-history.html:97
+msgid "Enter Price"
+msgstr "Cena Wejścia"
+
+#: templates/exchange.html:411 templates/exchange.html:438
+#: templates/order-history.html:53 templates/order-history.html:101
+msgid "Current Price"
+msgstr "Aktualna Cena"
+
+#: templates/exchange.html:412 templates/exchange.html:439
+#: templates/order-history.html:54 templates/order-history.html:102
+msgid "Total"
+msgstr "Razem"
+
+#: templates/exchange.html:413
+msgid "Action"
+msgstr "Akcja"
+
+#: templates/exchange.html:440 templates/order-history.html:103
+msgid "Status"
+msgstr "Status"
+
+#: templates/exchange.html:458 templates/order-history.html:121
+msgid "Closed"
+msgstr "Zamknięto"
+
+#: templates/exchange.html:466 templates/order-history.html:77
+#: templates/order-history.html:129
+msgid "No records"
+msgstr "Brak rekordów"
+
+#: templates/login.html:60
+msgid "Log in"
+msgstr "Zaloguj się"
+
+#: templates/login.html:64 templates/login.html:67
+msgid "Email/Phone Number"
+msgstr "Email/Numer telefonu"
+
+#: templates/login.html:68 templates/login.html:80
+msgid "This field is required."
+msgstr "To pole jest wymagane."
+
+#: templates/login.html:72
+msgid "Password"
+msgstr "Hasło"
+
+#: templates/login.html:74
+msgid "Forgot password?"
+msgstr "Zapomniałeś hasła?"
+
+#: templates/login.html:78
+msgid "Login Password"
+msgstr "Hasło Logowania"
+
+#: templates/login.html:88
+msgid "Remember me"
+msgstr "Zapamiętaj mnie"
+
+#: templates/login.html:92
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: templates/login.html:99
+msgid "Don't have an account?"
+msgstr "Nie masz konta?"
+
+#: templates/login.html:100
+msgid "Sign up"
+msgstr "Zarejestruj się"
+
+#: templates/login.html:109
+msgid "Docs"
+msgstr "Dokumenty"
+
+#: templates/login.html:112
+msgid "Cookies"
+msgstr "Ciasteczka"
+
+#: templates/login.html:115
+msgid "Terms"
+msgstr "Warunki"
+
+#: templates/login.html:118
+msgid "Privacy"
+msgstr "Prywatność"
+
+#: templates/my-dashboard.html:38
+msgid "Hello,"
+msgstr "Witaj,"
+
+#: templates/my-dashboard.html:42
+msgid "User"
+msgstr "Użytkownik"
+
+#: templates/my-dashboard.html:50
+#, fuzzy
+msgid "Welcome in"
+msgstr "Zaloguj się"
+
+#: templates/my-dashboard.html:57 templates/navbar.html:156
+msgid "UID"
+msgstr "UID"
+
+#: templates/my-dashboard.html:82
+msgid "Identification"
+msgstr "Identyfikacja"
+
+#: templates/my-dashboard.html:93
+msgid "Verified"
+msgstr "Zweryfikowany"
+
+#: templates/my-dashboard.html:106
+msgid "Your Balance"
+msgstr "Twoje Saldo"
+
+#: templates/my-dashboard.html:122
+msgid "Trade more to earn more"
+msgstr "Handluj więcej, aby zarobić więcej"
+
+#: templates/my-dashboard.html:129 templates/sidebar.html:67
+msgid "Trade"
+msgstr "Handluj"
+
+#: templates/my-dashboard.html:130 templates/my-dashboard.html:155
+#: templates/my-dashboard.html:160
+msgid "Deposit"
+msgstr "Wpłata"
+
+#: templates/my-dashboard.html:131 templates/my-dashboard.html:171
+#: templates/my-dashboard.html:176
+msgid "Withdraw"
+msgstr "Wypłata"
+
+#: templates/my-dashboard.html:145
+msgid "Deposit or Withdraw"
+msgstr "Wpłata lub wypłata"
+
+#: templates/my-dashboard.html:146
+msgid "You can deposit or withdraw funds at any time"
+msgstr "Możesz wpłacać lub wypłacać środki w dowolnym momencie"
+
+#: templates/my-dashboard.html:157
+msgid "Deposit crypto or fiat."
+msgstr "Wpłać krypto lub fiat."
+
+#: templates/my-dashboard.html:173
+msgid "Use local currency and payment method."
+msgstr "Użyj lokalnej waluty i metody płatności."
+
+#: templates/my-dashboard.html:186
+msgid "Account"
+msgstr "Konto"
+
+#: templates/my-dashboard.html:192
+msgid "Wallet"
+msgstr "Portfel"
+
+#: templates/my-dashboard.html:208
+msgid "MT5 Balance"
+msgstr "Saldo MT5"
+
+#: templates/my-dashboard.html:224
+msgid "MT4 Balance"
+msgstr "Saldo MT4"
+
+#: templates/my-dashboard.html:240
+msgid "Profit"
+msgstr "Zysk"
+
+#: templates/my-dashboard.html:630
+msgid "Market News"
+msgstr "Wiadomości Rynkowe"
+
+#: templates/my-dashboard.html:631
+msgid "More"
+msgstr "Więcej"
+
+#: templates/my-dashboard.html:651
+msgid "No news"
+msgstr "Brak wiadomości"
+
+#: templates/navbar.html:49
+msgid "Balance"
+msgstr "Saldo"
+
+#: templates/navbar.html:58
+msgid "Overview"
+msgstr "Przegląd"
+
+#: templates/navbar.html:75
+msgid "Orders"
+msgstr "Zamówienia"
+
+#: templates/navbar.html:100
+msgid "All Orders"
+msgstr "Wszystkie Zamówienia"
+
+#: templates/navbar.html:141 templates/navbar.html:305
+msgid "Add Funds"
+msgstr "Dodaj Środki"
+
+#: templates/navbar.html:185 templates/navbar.html:265
+#: templates/sidebar.html:36 templates/sidebar.html:50
+msgid "Dashboard"
+msgstr "Panel Główny"
+
+#: templates/navbar.html:196 templates/navbar.html:274
+msgid "My Asset"
+msgstr "Mój Majątek"
+
+#: templates/navbar.html:206
+msgid "My Orders"
+msgstr "Moje Zamówienia"
+
+#: templates/navbar.html:213
+msgid "Account Settings"
+msgstr "Ustawienia Konta"
+
+#: templates/navbar.html:221
+#, fuzzy
+msgid "Log Out"
+msgstr "Zaloguj się"
+
+#: templates/navbar.html:297 templates/sidebar.html:54
+msgid "Exchange"
+msgstr "Giełda"
+
+#: templates/order-history.html:31
+msgid "Open Orders"
+msgstr "Otwarte Zamówienia"
+
+#: templates/sidebar.html:32
+msgid "Assets"
+msgstr "Aktywa"
+
+#: templates/sidebar.html:101
+msgid "Accounts"
+msgstr "Konta"
+
+#: templates/sidebar.html:105 templates/sidebar.html:114
+msgid "Settings"
+msgstr "Ustawienia"

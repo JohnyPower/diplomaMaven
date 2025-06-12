@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+
+<head class="crypt-dark">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crypt</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <link rel="icon" type="image/svg" href="../static/images/favicon.svg">
+</head>
+
+<body class="crypt-dark">
+    <section class="container-fluid d-sm-flex flex-row fixed-sidebar">
+        {% include 'sidebar.html' %}
+        <!-- Main Content -->
+        <div class="wrapper pb-2">
+            {% include 'navbar.html' %}
+
+            <!-- Dashboard -->
+            <div class="row g-2 pb-2 animation-element">
+                <!-- Order Book | Market Trades -->
+                <div id="first" class="col-12 col-xxl-9 col-xl-9 col-lg-12">
+                    <!-- Watchlist -->
+                    <div class="card-bs p-2">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                          <div class="tradingview-widget-container__widget"></div>
+
+                          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                          {
+                          "width": "100%",
+                          "height": "600",
+                          "symbol": "FX:EURUSD",
+                          "interval": "5",
+                          "timezone": "Etc/UTC",
+                          "theme": "dark",
+                          "style": "1",
+                          "locale": "en",
+                          "backgroundColor": "rgba(19, 23, 34, 0)",
+                          "hide_side_toolbar": false,
+                          "allow_symbol_change": true,
+                          "save_image": false,
+                          "calendar": false,
+                          "support_host": "https://www.tradingview.com"
+                        }
+                          </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                    <!--Buy/Sell Tabs -->
+                    <div class="tab-content table-responsive card-bs p-2 mt-2">
+                        <!--Tab -->
+                        <ul class="nav nav-pills nav-justified gap-1 card-bs-tabs p-1">
+{#                            <li class="nav-item">#}
+{#                                <button class="nav-link active" id="pills-limit" data-bs-toggle="pill" data-bs-target="#pills-limit-tab" type="button" aria-controls="pills-limit-tab">{{ _('Limit') }}</button>#}
+{#                            </li>#}
+                            <li class="nav-item">
+                                <button class="nav-link active" id="pills-market" data-bs-toggle="pill"
+                                        data-bs-target="#pills-market-tab" type="button"
+                                        aria-controls="pills-market-tab">{{ _('Market') }}</button>
+                            </li>
+{#                            <li class="nav-item">#}
+{#                                <button class="nav-link" id="pills-stop-limit" data-bs-toggle="pill" data-bs-target="#pills-stop-limit-tab" type="button" aria-controls="pills-stop-limit-tab">{{ _('Stop Limit') }}</button>#}
+{#                            </li>#}
+                        </ul>
+                        <!--Limit Tabs -->
+                           <!--Market Tabs -->
+                        <div class="tab-pane fade show active" id="pills-market-tab" role="tabpanel"
+                             aria-labelledby="pills-market" tabindex="0">
+                            <div class="d-sm-flex flex-row justify-content-between gap-3 p-1">
+                                <!--Buy Tabs -->
+                                <div class="w-100 active mt-3">
+                                    <form method="post">
+                                        <input type="hidden" id="selectedPairId" name="pair_id" value="{% if default_pair %}{{ default_pair.id }}{% endif %}">
+                                        <div class="mb-3 p-1">
+                                            <label class="form-label text-sm text-light">{{ _('Selected Pair') }}</label>
+                                            <input type="text" class="form-control placeholder-text" id="selectedPair"
+                                                   value="{% if default_pair %}{{ default_pair.symbol }}{% endif %}"
+                                                   readonly>
+                                        </div>
+
+                                          <div class="input-group mb-3 P-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Amount') }}</div>
+                                                 <input class="form-control placeholder-text" type="text" name="amount" placeholder="{{ _('Enter amount') }}">
+                                            </div>
+
+                                           <div class="input-group mb-3 p-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Take Profit') }}</div>
+                                                <input class="form-control placeholder-text" type="text" name="take_profit"
+                                                       id="takeProfitInput" placeholder="0">
+                                            </div>
+                                           <div class="input-group mb-3 p-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Stop Loss') }}</div>
+                                                <input class="form-control placeholder-text" type="text" name="stop_loss"
+                                                       id="stopLossInput" placeholder="0">
+                                            </div>
+                                        <input type="hidden" name="order_type" value="buy">
+                                        <div class="d-grid mt-5">
+                                            <button class="btn btn-up" type="submit">{{ _('Buy') }}</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="vr"></div>
+                                </div>
+                                <!--Sell Tabs -->
+                                <div class="w-100 active mt-3">
+                                    <form method="post">
+                                        <input type="hidden" id="selectedPairIdSell" name="pair_id"
+                                               value="{% if default_pair %}{{ default_pair.id }}{% endif %}">
+                                        <div class="mb-3 p-1">
+                                            <label class="form-label text-sm text-light">{{ _('Selected Pair') }}</label>
+                                            <input type="text" class="form-control placeholder-text" id="selectedPairSell"
+                                                   value="{% if default_pair %}{{ default_pair.symbol }}{% endif %}"
+                                                   readonly>
+                                        </div>
+                                          <div class="input-group mb-3 P-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Amount') }}</div>
+                                                 <input class="form-control placeholder-text" type="text" name="amount" placeholder="{{ _('Enter amount') }}">
+                                            </div>
+
+                                           <div class="input-group mb-3 p-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Take Profit') }}</div>
+                                                <input class="form-control placeholder-text" type="text" name="take_profit"
+                                                       id="takeProfitInputSell" placeholder="0">
+                                            </div>
+                                           <div class="input-group mb-3 p-1">
+                                                <div class="input-group-prepend input-group-text">{{ _('Stop Loss') }}</div>
+                                                <input class="form-control placeholder-text" type="text" name="stop_loss"
+                                                       id="stopLossInputSell" placeholder="0">
+                                            </div>
+                                        <input type="hidden" name="order_type" value="sell">
+                                        <div class="d-grid mt-5">
+                                            <button class="btn btn-down" type="submit">{{ _('Sell') }}</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Coin Tab -->
+                <div id="third" class="col-12 col-xxl-3 col-xl-3 col-lg-6">
+                    <!--Coin Overview -->
+                    <div class="tab-content card-bs table-temp3 p-2">
+                        <!-- Tab -->
+                        <div class="nav nav-pills nav-justified gap-1 card-bs-tabs p-1">
+                            <button class="nav-link active" id="pills-crypto" data-bs-toggle="pill"
+                                    data-bs-target="#pills-crypto-tab" type="button"
+                                    aria-controls="pills-crypto-tab">{{ _('Crypto') }}
+                            </button>
+                            <button class="nav-link" id="pills-forex" data-bs-toggle="pill"
+                                    data-bs-target="#pills-forex-tab" type="button"
+                                    aria-controls="pills-forex-tab">{{ _('Forex') }}
+                            </button>
+                             <button class="nav-link" id="pills-stocks" data-bs-toggle="pill"
+                                    data-bs-target="#pills-stocks-tab" type="button"
+                                    aria-controls="pills-stocks-tab">{{ _('Stocks') }}
+                            </button>
+                            <button class="nav-link" id="pills-all" data-bs-toggle="pill" data-bs-target="#pills-all-tab"
+                                    type="button" aria-controls="pills-all-tab">{{ _('All') }}
+                            </button>
+                        </div>
+                        <!--Crypto Tabs -->
+                        <div class="tab-pane fade show active" id="pills-crypto-tab" role="tabpanel"
+                             aria-labelledby="pills-crypto" tabindex="0">
+                            <!--Table -->
+                            <div class="table-responsive">
+                                <table class="table table-dark table-hover crypt-tab" id="crypto-table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">{{ _('Pairs') }}</th>
+                                        <th scope="col">{{ _('Price') }}</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% if pairs %}
+                                            {% for pair in pairs %}
+                                                {% if 'crypto' in pair.type %}
+                                                    <tr data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="$0.3943000" onclick="updateChart('{{ pair.symbol }}', '{{ pair.id }}')">
+                                                    <td>
+                                                        <div class="d-flex flex-row align-items-center gap-2">
+                                                            <div class="fav-btn">
+                                                                <svg class="favme is_animating" width="16" height="16"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M11.173 3.007L12.768 3L15.178 8.11L20.504 8.941L21 10.436L17.11 14.449L18.005 20.085L16.707 21L11.972 18.352L7.236 21L5.94 20.077L6.886 14.445L3 10.436L3.496 8.941L8.818 8.111L11.173 3.007Z"
+                                                                         fill="currentColor"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="d-flex flex-row align-items-center gap-2">
+                                                                <p class="fw-medium mb-0">{{ pair.pair }}
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                     <td id="{{ pair.symbol }}-price">
+                                                        {% if prices and pair.symbol in prices %}
+                                                            {{ prices[pair.symbol] | round(2) }}
+                                                        {% else %}
+                                                           0.00
+                                                        {% endif %}
+                                                    </td>
+
+                                                </tr>
+                                                {% endif %}
+                                           {% endfor %}
+                                        {% else %}
+                                             <p>{{ _('Немає пар') }}</p>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--Forex Tabs -->
+                        <div class="tab-pane fade" id="pills-forex-tab" role="tabpanel"
+                             aria-labelledby="pills-forex" tabindex="0">
+                            <!--Table -->
+                           <div class="table-responsive">
+                                <table class="table table-dark table-hover crypt-tab" id="forex-table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">{{ _('Pairs') }}</th>
+                                        <th scope="col">{{ _('Price') }}</th>
+
+                                    </tr>
+                                    </thead>
+                                     <tbody>
+                                        {% if pairs %}
+                                            {% for pair in pairs %}
+                                                {% if 'forex' in pair.type %}
+                                                 <tr data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="$0.3943000" onclick="updateChart('{{ pair.symbol }}', '{{ pair.id }}')">
+                                                    <td>
+                                                        <div class="d-flex flex-row align-items-center gap-2">
+                                                            <div class="fav-btn">
+                                                                <svg class="favme is_animating" width="16" height="16"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                     xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M11.173 3.007L12.768 3L15.178 8.11L20.504 8.941L21 10.436L17.11 14.449L18.005 20.085L16.707 21L11.972 18.352L7.236 21L5.94 20.077L6.886 14.445L3 10.436L3.496 8.941L8.818 8.111L11.173 3.007Z"
+                                                                        fill="currentColor"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="d-flex flex-row align-items-center gap-2">
+                                                                <p class="fw-medium mb-0">{{ pair.pair }}
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                      <td id="{{ pair.symbol }}-price">
+                                                        {% if prices and pair.symbol in prices %}
+                                                            {{ prices[pair.symbol] | round(5) }}
+                                                        {% else %}
+                                                           0.00
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                {% endif %}
+                                        {% endfor %}
+                                        {% else %}
+                                             <p>{{ _('Немає пар') }}</p>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                           <!--Stocks Tabs -->
+                           <div class="tab-pane fade" id="pills-stocks-tab" role="tabpanel"
+                                aria-labelledby="pills-stocks" tabindex="0">
+                            <!--Table -->
+                           <div class="table-responsive">
+                               <table class="table table-dark table-hover crypt-tab" id="stocks-table">
+                                   <thead>
+                                       <tr>
+                                           <th scope="col">{{ _('Pairs') }}</th>
+                                           <th scope="col">{{ _('Price') }}</th>
+                                       </tr>
+                                   </thead>
+                                    <tbody>
+                                        {% if pairs %}
+                                            {% for pair in pairs %}
+                                                {% if 'stock' in pair.type %}
+                                                <tr data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="$0.3943000" onclick="updateChart('{{ pair.symbol }}', '{{ pair.id }}')">
+                                                    <td>
+                                                        <div class="d-flex flex-row align-items-center gap-2">
+                                                            <div class="fav-btn">
+                                                                <svg class="favme is_animating" width="16" height="16"
+                                                                    viewBox="0 0 24 24" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                        d="M11.173 3.007L12.768 3L15.178 8.11L20.504 8.941L21 10.436L17.11 14.449L18.005 20.085L16.707 21L11.972 18.352L7.236 21L5.94 20.077L6.886 14.445L3 10.436L3.496 8.941L8.818 8.111L11.173 3.007Z"
+                                                                         fill="currentColor"/>
+                                                                </svg>
+                                                            </div>
+                                                            <div class="d-flex flex-row align-items-center gap-2">
+                                                                <p class="fw-medium mb-0">{{ pair.pair }}
+
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                     <td id="{{ pair.symbol }}-price">
+                                                        {% if prices and pair.symbol in prices %}
+                                                            {{ prices[pair.symbol] | round(2) }}
+                                                        {% else %}
+                                                           0.00
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+                                                {% endif %}
+                                          {% endfor %}
+                                        {% else %}
+                                           <p>{{ _('Немає пар') }}</p>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                   <!--All Tabs -->
+                    <div class="tab-pane fade" id="pills-all-tab" role="tabpanel"
+                            aria-labelledby="pills-all" tabindex="0">
+                        <!--Table -->
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover crypt-tab" id="all-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">{{ _('Pairs') }}</th>
+                                        <th scope="col">{{ _('Price') }}</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% if pairs %}
+                                    {% for pair in pairs %}
+                                         <tr data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="$0.3943000" onclick="updateChart('{{ pair.symbol }}', '{{ pair.id }}')">
+                                            <td>
+                                                <div class="d-flex flex-row align-items-center gap-2">
+                                                    <div class="fav-btn">
+                                                        <svg class="favme is_animating" width="16" height="16"
+                                                             viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                 d="M11.173 3.007L12.768 3L15.178 8.11L20.504 8.941L21 10.436L17.11 14.449L18.005 20.085L16.707 21L11.972 18.352L7.236 21L5.94 20.077L6.886 14.445L3 10.436L3.496 8.941L8.818 8.111L11.173 3.007Z"
+                                                                fill="currentColor"/>
+                                                        </svg>
+                                                    </div>
+                                                    <div class="d-flex flex-row align-items-center gap-2">
+                                                        <p class="fw-medium mb-0">{{ pair.pair }}
+
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                                <td id="{{ pair.symbol }}-price">
+                                                    {% if prices and pair.symbol in prices %}
+                                                        {{ prices[pair.symbol] | round(5) }}
+                                                    {% else %}
+                                                       0.00
+                                                    {% endif %}
+                                                </td>
+
+                                       </tr>
+                                    {% endfor %}
+                               {% else %}
+                                   <p>{{ _('Немає пар') }}</p>
+                                {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+            <!-- My History -->
+            <div class="row g-2 animation-element">
+                <div class="tab-content card-bs h-100">
+                    <div class="d-sm-flex flex-row justify-content-between px-2 mb-1">
+                        <!-- Tabs -->
+                        <div class="nav nav-pills card-border flex-sm-row mt-2 p-1">
+                            <button class="nav-link active" id="open-order-tab" data-bs-toggle="tab"
+                                    data-bs-target="#open-order-tab-pane" type="button"
+                                    aria-controls="open-order-tab-pane">{{ _('Open Order') }}</button>
+                            <button class="nav-link" id="order-history-tab" data-bs-toggle="tab"
+                                    data-bs-target="#order-history-tab-pane" type="button"
+                                    aria-controls="order-history-tab-pane">{{ _('Order History') }}</button>
+                        </div>
+                    </div>
+                    <!-- Open Order Table -->
+                    <div class="tab-pane fade show active" id="open-order-tab-pane" aria-labelledby="open-order-tab"
+                         tabindex="0">
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table table-dark mb-0" id="open-orders-table">
+                                <thead>
+                                    <tr class="mb-0">
+                                        <th scope="col" class="underline">{{ _('Date') }}</th>
+                                        <th scope="col" class="underline">{{ _('Pair') }}</th>
+                                        <th scope="col" class="underline">{{ _('Order Type') }}</th>
+                                        <th scope="col" class="underline">{{ _('Side') }}</th>
+                                        <th scope="col" class="underline">{{ _('Enter Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Take Profit') }}</th>
+                                        <th scope="col" class="underline">{{ _('Stop Loss') }}</th>
+                                        <th scope="col" class="underline">{{ _('Amount') }}</th>
+                                        <th scope="col" class="underline">{{ _('Current Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Total') }}</th>
+                                        <th scope="col" class="underline">{{ _('Action') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Динамічно заповнюється -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Order History Table -->
+                    <div class="tab-pane fade" id="order-history-tab-pane" role="tabpanel"
+                         aria-labelledby="order-history-tab" tabindex="0">
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover mb-0">
+                                <thead>
+                                    <tr class="mb-0">
+                                        <th scope="col" class="underline">{{ _('Date') }}</th>
+                                        <th scope="col" class="underline">{{ _('Pair') }}</th>
+                                        <th scope="col" class="underline">{{ _('Order Type') }}</th>
+                                        <th scope="col" class="underline">{{ _('Side') }}</th>
+                                        <th scope="col" class="underline">{{ _('Enter Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Take Profit') }}</th>
+                                        <th scope="col" class="underline">{{ _('Stop Loss') }}</th>
+                                        <th scope="col" class="underline">{{ _('Amount') }}</th>
+                                        <th scope="col" class="underline">{{ _('Current Price') }}</th>
+                                        <th scope="col" class="underline">{{ _('Total') }}</th>
+                                        <th scope="col" class="underline">{{ _('Status') }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                     {% if order_history %}
+                                        {% for order in order_history %}
+                                               <tr class="align-middle">
+                                                <td class="fw-medium">{% if order.formatted_date %}{{ order.formatted_date }}{% endif %}</td>
+                                                <td class="fw-medium">{{ order.pair.pair }}</td>
+                                                <td class="encrypted fw-medium">{{ _('Market') }}</td>
+                                                 <td class="fw-medium {% if order.type == 'buy' %}text-primary{% else %}text-danger{% endif %}">{{ order.type }}</td>
+                                                 <td class="fw-medium">{{ order.enterPrice }}</td>
+                                                <td class="fw-medium">{{ order.takeProfit }}</td>
+                                                <td class="fw-medium">{{ order.stopLoss }}</td>
+                                                 <td class="encrypted fw-medium">{{ order.amount }}</td>
+                                                <td class="encrypted fw-medium">{{ order.currentPrice }}</td>
+                                                <td class="encrypted fw-medium">{{ order.profit  }}</td>
+                                                    <td>
+                                                       <a class="link-primary fw-bold ms-3" href="#!">{{ _('Closed') }}</a>
+                                                    </td>
+                                                </tr>
+                                        {% endfor %}
+                                     {% else %}
+                                       <tr class="align-middle">
+                                           <td colspan="9" class="no-orders text-center">
+                                                <img src="../static/images/empty.svg" alt="no-orders">
+                                                <p class="crypt-grayscale-600 pb-3">{{ _('No records') }}</p>
+                                           </td>
+                                       </tr>
+                                     {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include 'payment_modal.html' %}
+    </section>
+    <!-- TradingView Ticker -->
+     <div class="container-fluid tradingview-widget-container__widget mb-2 mt-2 card-bs">
+        <script  src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+            "symbols": [
+            {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500 Index"
+            },
+            {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "US 100 Cash CFD"
+            },
+            {
+                "proName": "FX_IDC:EURUSD",
+                "title": "EUR to USD"
+            },
+            {
+                "proName": "BITSTAMP:BTCUSD",
+                "title": "Bitcoin"
+            },
+            {
+                "proName": "BITSTAMP:ETHUSD",
+                "title": "Ethereum"
+            }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "colorTheme": "dark",
+            "locale": "en"
+        }
+        </script>
+    </div>
+
+  <!-- Main Content End -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+  <script src="../static/bootstrap/js/bootstrap.js"></script>
+  <script src="../static/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+<script>
+   function updateChart(symbol, pairId) {
+        // Отримуємо контейнер графіка
+        const widgetContainer = document.querySelector('.tradingview-widget-container');
+
+        // Очищаємо поточний графік
+        widgetContainer.innerHTML = '';
+
+        // Додаємо новий графік із вибраною парою
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+        script.async = true;
+        script.innerHTML = JSON.stringify({
+            "width": "100%",
+            "height": "600",
+            "symbol": symbol,
+            "interval": "5",
+            "timezone": "Etc/UTC",
+            "theme": "dark",
+            "style": "1",
+            "locale": "en",
+            "backgroundColor": "rgba(19, 23, 34, 0)",
+            "hide_side_toolbar": false,
+            "allow_symbol_change": true,
+            "save_image": false,
+            "calendar": false
+        });
+
+        widgetContainer.appendChild(script);
+
+         document.getElementById('selectedPairId').value = pairId;
+         document.getElementById('selectedPairIdSell').value = pairId;
+        document.getElementById('selectedPair').value = symbol;
+        document.getElementById('selectedPairSell').value = symbol;
+         const priceElement = document.getElementById(`${symbol}-price`);
+            if (priceElement) {
+                const price = priceElement.textContent.trim();
+                document.getElementById('takeProfitInput').value = price;
+                document.getElementById('stopLossInput').value = price;
+                  document.getElementById('takeProfitInputSell').value = price;
+                document.getElementById('stopLossInputSell').value = price;
+            } else {
+                document.getElementById('takeProfitInput').value = '0.00';
+                document.getElementById('stopLossInput').value = '0.00';
+                document.getElementById('takeProfitInputSell').value = '0.00';
+                document.getElementById('stopLossInputSell').value = '0.00';
+            }
+    }
+
+     window.addEventListener('load', function() {
+        const defaultPair = document.getElementById('selectedPair');
+        if (defaultPair && defaultPair.value) {
+              let symbol = defaultPair.value
+              let selectedPairId= document.getElementById('selectedPairId').value
+             updateChart(symbol,selectedPairId);
+        }
+     });
+</script>
+
+ <script>
+
+    document.getElementById('paymentMethodWithdraw').addEventListener('change', function() {
+        const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+          const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+        if (this.value === 'ERC20' || this.value === 'TRC20') {
+            walletAddressInput.style.display = 'flex';
+              cardNumberInput.style.display = 'none';
+        } else {
+            walletAddressInput.style.display = 'none';
+              cardNumberInput.style.display = 'flex';
+        }
+    });
+
+        window.addEventListener('load', function() {
+            const paymentMethodSelect = document.getElementById('paymentMethodWithdraw');
+            const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+            const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+
+            if (paymentMethodSelect && (paymentMethodSelect.value === 'ERC20' || paymentMethodSelect.value === 'TRC20')) {
+                walletAddressInput.style.display = 'flex';
+                cardNumberInput.style.display = 'none';
+            } else {
+                walletAddressInput.style.display = 'none';
+                cardNumberInput.style.display = 'flex';
+            }
+        });
+    </script>
+
+<script>
+    async function fetchOpenOrders() {
+        try {
+            const response = await fetch('/api/open-orders');
+            if (!response.ok) throw new Error('Network response was not ok');
+            const orders = await response.json();
+
+            const tableBody = document.querySelector('#open-orders-table tbody');
+            tableBody.innerHTML = ''; // Очищення таблиці перед оновленням
+
+            orders.forEach(order => {
+                const row = document.createElement('tr');
+                row.className = 'align-middle';
+                row.innerHTML = `
+                    <td class="fw-medium">${order.formatted_date || ''}</td>
+                    <td class="fw-medium">${order.pair || ''}</td>
+                    <td class="encrypted fw-medium">Market</td>
+                    <td class="fw-medium ${order.type === 'buy' ? 'text-primary' : 'text-danger'}">${order.type || ''}</td>
+                    <td class="fw-medium">${order.enterPrice || ''}</td>
+                    <td class="fw-medium">${order.takeProfit || ''}</td>
+                    <td class="fw-medium">${order.stopLoss || ''}</td>
+                    <td class="encrypted fw-medium">${order.amount || ''}</td>
+                    <td class="encrypted fw-medium">${order.currentPrice || ''}</td>
+                    <td class="encrypted fw-medium text-up">
+                        ${(order.profit != null && order.amount != 0)
+                            ? `${order.profit.toFixed(2)} (${((order.profit / order.amount) * 100).toFixed(2)}%)`
+                            : '0.00 (0.00%)'}
+                    </td>
+                    <td>
+                        <form method="post">
+                            <button type="submit" class="link-secondary fw-bold ms-3" name="close_position" value="${order.id}">Close</button>
+                        </form>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Failed to fetch open orders:', error);
+        }
+    }
+
+    // Оновлення кожні 30 секунд
+    setInterval(fetchOpenOrders, 30000);
+
+    // Виклик при завантаженні сторінки
+    fetchOpenOrders();
+</script>
+
+</body>
+</html>

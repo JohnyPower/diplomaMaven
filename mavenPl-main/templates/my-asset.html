@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="crypt-dark">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Crypt</title>
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/responsive.css">
+  <link rel="stylesheet" href="../static/css/button.css">
+  <link rel="icon" type="image/svg" href="../static/images/favicon.svg">
+</head>
+
+<body class="crypt-dark">
+    <section class="container-fluid d-sm-flex flex-row fixed-sidebar">
+        {% include 'sidebar.html' %}
+        <!-- Main Content -->
+        <div class="wrapper pb-4">
+            {% include 'navbar.html' %}
+
+            <!-- Body Content -->
+            <div class="card-bs p-3 p-sm-4 animation-element">
+                <!-- Accounts -->
+                <div class="d-sm-flex flex-row justify-content-between gap-2 mb-4">
+                    <div class="col-auto">
+                        <div class="d-flex gap-1 ">
+                            <h5>Total Assets</h5>
+                            <a href="#!" class="link-secondary" id="encrypt">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4" d="M21.25 9.15005C18.94 5.52005 15.56 3.43005 12 3.43005C10.22 3.43005 8.49 3.95005 6.91 4.92005C5.33 5.90005 3.91 7.33005 2.75 9.15005C1.75 10.7201 1.75 13.2701 2.75 14.8401C5.06 18.4801 8.44 20.5601 12 20.5601C13.78 20.5601 15.51 20.0401 17.09 19.0701C18.67 18.0901 20.09 16.6601 21.25 14.8401C22.25 13.2801 22.25 10.7201 21.25 9.15005ZM12 16.0401C9.76 16.0401 7.96 14.2301 7.96 12.0001C7.96 9.77005 9.76 7.96005 12 7.96005C14.24 7.96005 16.04 9.77005 16.04 12.0001C16.04 14.2301 14.24 16.0401 12 16.0401Z" fill="currentColor"/>
+                                    <path d="M12.0004 9.14001C10.4304 9.14001 9.15039 10.42 9.15039 12C9.15039 13.57 10.4304 14.85 12.0004 14.85C13.5704 14.85 14.8604 13.57 14.8604 12C14.8604 10.43 13.5704 9.14001 12.0004 9.14001Z" fill="currentColor"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center">
+                            <h2 class="fw-bold encrypted mb-0">0.00</h2>
+                            <div>
+                                <select class="form-select text-bg-bs" id="inputGroupTotalAsset">
+                                <option selected>BTC</option>
+                                <option value="1">ETH</option>
+                                <option value="2">BNB</option>
+                                <option value="3">USDT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h6 class="crypt-grayscale-700">≈ $0.00</h6>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-sm-flex flex-row justify-content-end gap-2">
+                            <a class="btn btn-editor btn-primary mb-2" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Buy Crypto</a>
+                            <a class="btn btn-editor btn-info mb-2" href="#!" role="button">Withdraw</a>
+                            <a class="btn btn-editor btn-danger mb-2" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Account Data -->
+                <div class="row g-2 card-border mb-4">
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-3 col-md-6">
+                        <div class="card-bs p-3 d-sm-flex flex-row align-items-center">
+                            <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <div class="">
+                                        <p class="crypt-grayscale-500">Spot</p>
+                                        <div class="d-flex pb-3">
+                                            <h3 class="fw-bold encrypted mb-0">0.00</h3>
+                                            <select class="form-select text-bg-bs" id="inputGroupSpotCoin">
+                                                <option selected>BTC</option>
+                                                <option value="1">ETH</option>
+                                                <option value="2">BNB</option>
+                                                <option value="3">USDT</option>
+                                            </select>
+                                        </div>
+                                        <p class="crypt-grayscale-700 encrypted">≈ 0.00 USD</p>
+                                    </div>
+                                    <img class="" alt="" style="width:60px;" src="../static/images/icon/spot.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-3 col-md-6">
+                        <div class="card-bs p-3 d-sm-flex flex-row align-items-center">
+                            <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <div class="">
+                                        <p class="crypt-grayscale-500">Margin</p>
+                                        <div class="d-flex pb-3">
+                                            <h3 class="fw-bold encrypted mb-0">0.00</h3>
+                                            <select class="form-select text-bg-bs" id="inputGroupMarginCoin">
+                                                <option selected>BNB</option>
+                                                <option value="1">ETH</option>
+                                                <option value="2">BTC</option>
+                                                <option value="3">USDT</option>
+                                            </select>
+                                        </div>
+                                        <p class="crypt-grayscale-700 encrypted">≈ 0.00 USD</p>
+                                    </div>
+                                <img class="" alt="" style="width:60px;" src="../static/images/icon/margin.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-3 col-md-6">
+                        <div class="card-bs p-3 d-sm-flex flex-row align-items-center">
+                            <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <div class="">
+                                        <p class="crypt-grayscale-500">Futures</p>
+                                        <div class="d-flex pb-3">
+                                            <h3 class="fw-bold encrypted mb-0">0.00</h3>
+                                            <select class="form-select text-bg-bs" id="inputGroupFuturesCoin">
+                                                <option selected>ETH</option>
+                                                <option value="1">BNB</option>
+                                                <option value="2">BTC</option>
+                                                <option value="3">USDT</option>
+                                            </select>
+                                        </div>
+                                        <p class="crypt-grayscale-700 encrypted">≈ 0.00 USD</p>
+                                    </div>
+                                <img class="" alt="" style="width:60px;" src="../static/images/icon/funding.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-4 col-xxl-3 col-md-6">
+                        <div class="card-bs p-3 d-sm-flex flex-row align-items-center">
+                            <div class="card-body">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <div class="">
+                                        <p class="crypt-grayscale-500">Earn</p>
+                                        <div class="d-flex pb-3">
+                                            <h3 class="fw-bold encrypted mb-0">0.45200</h3>
+                                            <select class="form-select text-bg-bs" id="inputGroupEarnCoin">
+                                                <option selected>USDT</option>
+                                                <option value="1">ETH</option>
+                                                <option value="2">BTC</option>
+                                                <option value="3">BNB</option>
+                                            </select>
+                                        </div>
+                                        <p class="crypt-grayscale-700 encrypted">≈ 0.00 USD</p>
+                                    </div>
+                                <img class="" alt="" style="width:60px;" src="../static/images/icon/earn.svg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table -->
+                <div class="row">
+                    <div class="tab-content card-bs mt-2">
+                        <!-- Asset Tab -->
+                        <div class="d-sm-flex flex-row justify-content-between pb-4">
+                            <!-- Tabs -->
+                            <div class="nav nav-tabs card-bs card-border gap-2 p-1">
+                                <button class="nav-link active fs-6" id="popular-asset-tab" data-bs-toggle="tab" data-bs-target="#popular-asset-tab-pane" type="button" aria-controls="popular-asset-tab-pane">Popular Asset</button>
+                                <button class="nav-link fs-6" id="wallet-view-tab" data-bs-toggle="tab" data-bs-target="#wallet-view-tab-pane" type="button" aria-controls="wallet-view-tab-pane">Wallet View</button>
+                            </div>
+                            <!-- Checks -->
+                            <div class="d-flex gap-3 align-items-center ms-auto mt-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" checked>
+                                    <label class="form-check-label text-light">Hide assets ≤ 1 USD</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popular Asset Table -->
+                        <div class="tab-pane fade show active" id="popular-asset-tab-pane" role="tabpanel" aria-labelledby="popular-asset-tab" tabindex="0">
+                            <!-- Table -->
+                            <div class="table-responsive card-border">
+                                <table class="table table-dark table-hover mb-0">
+                                    <thead>
+                                        <tr class="table-active mb-0">
+                                            <th scope="col">Coin</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">24h Change</th>
+                                            <th scope="col">Ratio</th>
+                                            <th scope="col">Market Cap</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/btc.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">BTC</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">Bitcoin</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$74,491.41</td>
+                                            <td class="encrypted fw-medium text-up">+1.62%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/eth.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">ETH</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">Ethereum</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$3,073.67</td>
+                                            <td class="encrypted fw-medium text-down">-0.26%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/bnb.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">BNB</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">BNB</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$608.61</td>
+                                            <td class="encrypted fw-medium text-up">+3.72%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/near.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">NEAR</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">NEAR Protocol</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$5.53</td>
+                                            <td class="encrypted fw-medium text-up">+2.90%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/link.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">LINK</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">ChainLink</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$14.44</td>
+                                            <td class="encrypted fw-medium text-up">+5.87%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/tron.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">TRX</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">TRON</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$0.1955</td>
+                                            <td class="encrypted fw-medium text-down">-2.76%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-2">
+                                                    <img alt="" src="../static/images/coin/bch.svg" width="28">
+                                                    <div>
+                                                        <h6 class="fw-bold mb-0">BCH</h6>
+                                                        <p class="crypt-grayscale-600 mb-0">Bitcoin Cash</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium">$440.00</td>
+                                            <td class="encrypted fw-medium text-down">-1.43%</td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td class="fw-medium">$1,865.47B</td>
+                                            <td>
+                                                <a class="link-primary fw-bold" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Trade</a>
+                                                <a class="link-warning fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake ETH</a>
+                                                <a class="link-danger fw-bold ms-3" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">Transfer</a>
+                                                <a class="link-info fw-bold ms-3" href="#!" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Convert</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Wallet View Asset Table -->
+                        <div class="tab-pane fade" id="wallet-view-tab-pane" role="tabpanel" aria-labelledby="wallet-view-tab" tabindex="0">
+                            <!-- Table -->
+                            <div class="table-responsive card-border">
+                                <table class="table table-dark table-hover mb-0">
+                                    <thead>
+                                        <tr class="table-active mb-0">
+                                            <th scope="col">Wallet</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Ratio</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-3">
+                                                    <img alt="" src="../static/images/icon/spot.svg" width="28">
+                                                    <h6 class="fw-bold fs-6 mb-0">Spot Account</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td>
+                                                <a class="link-secondary icon-link-hover" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.5002 6.24984V8.74984H2.0835L7.91683 2.9165V6.24984H17.5002ZM2.50016 13.7498V11.2498H17.9168L12.0835 17.0832V13.7498H2.50016Z" fill="currentColor"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-3">
+                                                    <img alt="" src="../static/images/icon/margin.svg" width="28">
+                                                    <h6 class="fw-bold fs-6 mb-0">Margin Account</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td>
+                                                <a class="link-secondary icon-link-hover" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.5002 6.24984V8.74984H2.0835L7.91683 2.9165V6.24984H17.5002ZM2.50016 13.7498V11.2498H17.9168L12.0835 17.0832V13.7498H2.50016Z" fill="currentColor"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-3">
+                                                    <img alt="" src="../static/images/icon/futures.svg" width="28">
+                                                    <h6 class="fw-bold fs-6 mb-0">Futures Account</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td>
+                                                <a class="link-secondary icon-link-hover" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.5002 6.24984V8.74984H2.0835L7.91683 2.9165V6.24984H17.5002ZM2.50016 13.7498V11.2498H17.9168L12.0835 17.0832V13.7498H2.50016Z" fill="currentColor"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-3">
+                                                    <img alt="" src="../static/images/icon/bot.svg" width="28">
+                                                    <h6 class="fw-bold fs-6 mb-0">Trading Bots</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td>
+                                                <a class="link-secondary icon-link-hover" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.5002 6.24984V8.74984H2.0835L7.91683 2.9165V6.24984H17.5002ZM2.50016 13.7498V11.2498H17.9168L12.0835 17.0832V13.7498H2.50016Z" fill="currentColor"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr class="align-middle">
+                                            <td>
+                                                <div class="d-flex flex-row gap-3">
+                                                    <img alt="" src="../static/images/icon/earn.svg" width="28">
+                                                    <h6 class="fw-bold fs-6 mb-0">Earn</h6>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h6 class="encrypted mb-0">0.00</h6>
+                                                <span class="crypt-grayscale-600 encrypted">≈ $0.00</span>
+                                            </td>
+                                            <td class="fw-medium crypt-grayscale-600">--</td>
+                                            <td>
+                                                <a class="link-secondary icon-link-hover" href="#!" data-bs-toggle="modal" data-bs-target="#transferCrypto">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M17.5002 6.24984V8.74984H2.0835L7.91683 2.9165V6.24984H17.5002ZM2.50016 13.7498V11.2498H17.9168L12.0835 17.0832V13.7498H2.50016Z" fill="currentColor"/>
+                                                    </svg>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TradingView Ticker -->
+            <div class="container-fluid tradingview-widget-container__widget mt-2 card-bs animation-element">
+                <script src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [
+                            {
+                                "proName": "FOREXCOM:SPXUSD",
+                                "title": "S&P 500 Index"
+                            },
+                            {
+                                "proName": "FOREXCOM:NSXUSD",
+                                "title": "US 100 Cash CFD"
+                            },
+                            {
+                                "proName": "FX_IDC:EURUSD",
+                                "title": "EUR to USD"
+                            },
+                            {
+                                "proName": "BITSTAMP:BTCUSD",
+                                "title": "Bitcoin"
+                            },
+                            {
+                                "proName": "BITSTAMP:ETHUSD",
+                                "title": "Ethereum"
+                            }
+                        ],
+                        "showSymbolLogo": true,
+                        "isTransparent": true,
+                        "displayMode": "adaptive",
+                        "colorTheme": "dark",
+                        "locale": "en"
+                    }
+                </script>
+            </div>
+        </div>
+
+        {% include 'payment_modal.html' %}
+    </section>
+
+    <!-- Main Content End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/main.js"></script>
+
+ <script>
+
+    document.getElementById('paymentMethodWithdraw').addEventListener('change', function() {
+        const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+          const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+        if (this.value === 'ERC20' || this.value === 'TRC20') {
+            walletAddressInput.style.display = 'flex';
+              cardNumberInput.style.display = 'none';
+        } else {
+            walletAddressInput.style.display = 'none';
+              cardNumberInput.style.display = 'flex';
+        }
+    });
+
+        window.addEventListener('load', function() {
+            const paymentMethodSelect = document.getElementById('paymentMethodWithdraw');
+            const walletAddressInput = document.getElementById('walletAddressInputWithdraw');
+            const cardNumberInput = document.getElementById('cardNumberInputWithdraw');
+
+            if (paymentMethodSelect && (paymentMethodSelect.value === 'ERC20' || paymentMethodSelect.value === 'TRC20')) {
+                walletAddressInput.style.display = 'flex';
+                cardNumberInput.style.display = 'none';
+            } else {
+                walletAddressInput.style.display = 'none';
+                cardNumberInput.style.display = 'flex';
+            }
+        });
+    </script>
+
+</body>
+</html>

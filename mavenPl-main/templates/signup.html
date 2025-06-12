@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Crypt</title>
+  <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/button.css">
+  <link rel="stylesheet" href="../static/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/svg" href="../static/images/favicon.svg">
+</head>
+
+<body class="crypt-dark log-bg">
+    <!-- Header -->
+    <header class="crypt-header blur-header align-items-center fixed-top z-3">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-auto d-flex flex-row align-items-center">
+                <!-- Logo -->
+                <div class="crypt-logo dark">
+                    <a href="template-1.html">
+                        <img src="../static/images/logo-dark.svg" alt="">
+                    </a>
+                </div>
+                <div class="crypt-logo light">
+                    <a href="template-1.html">
+                        <img src="../static/images/logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- Navigation menu / Button -->
+            <div class="col-auto d-flex flex-row align-items-center">
+                <div class="user-settings gap-2 gap-sm-3">
+                    <!-- Call to Action -->
+                    <div class="flex">
+                        <button class="btn btn-editor btn-primary custom-btn-sm btn-11" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Connect</button>
+                    </div>
+                    <!-- Dark | Light Mode -->
+                    <div class="flex">
+                        <button id="darkMode">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="sun">
+                            <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Signup Form -->
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="crypt-login-form mt-5">
+                <div class="d-flex mb-4">
+                    <h3 class="fw-bold">Create Account</h3>
+                </div>
+                <form class="needs-validation" action="#!" name="password_strength" id="pass_form" novalidate>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex flex-column mb-3">
+                            <label for="email" class="form-label text-light">Email/Phone Number <span class="crypt-grayscale-600">*</span></label>
+                            <input type="email" class="form-control py-2 mb-0" name="email" id="email" placeholder="name@example.com" required>
+                            <div class="invalid-feedback mt-0">This field is required.</div>
+                        </div>
+                        <div class="d-flex flex-column mb-3">
+                            <label for="password" class="form-label text-light">Password <span class="crypt-grayscale-600">*</span></label>
+                            <div class="input-group-append">
+                                <input type="password" class="form-control form-controls py-2" name="password" id="password" value="" placeholder="Enter a password" autocomplete="off" required>
+                                <div class="eye fright"><i class="fa fa-eye" id="eye" onclick="toggle()"></i></div>
+                                <span id="passstrength"></span>
+                                <div class="text-muted crypt-grayscale-600 text-sm">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me" required>
+                                <label class="form-check-label text-secondary" for="remember_me">
+                                    I have read and agree to the <a href="#!" class="link-primary fw-bold mb-0">Terms of Use</a>.
+                                </label>
+                                <div class="invalid-feedback mt-0"> You must agree before submitting.</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary rounded-pill text-center mt-4" type="submit">Create Account</button>
+                    </div>
+                </form>
+                <div class="d-flex flex-column">
+                    <div class="divider" role="separator">
+                        <span class="crypt-grayscale-500 p-2">or</span>
+                    </div>
+                    <a href="#!" class="d-flex justify-content-between align-items-center button btn btn-outline-secondary" data-bs-toggle="button">Sign in with Google
+                        <img alt="" width="32" src="../static/images/icon/google.svg">
+                    </a>
+                    <a href="#!" class="d-flex justify-content-between align-items-center button btn btn-outline-secondary mt-3" data-bs-toggle="button">Sign in with Apple
+                        <img alt="" width="32" src="../static/images/icon/apple.svg">
+                    </a>
+                </div>
+                <div class="d-flex flex-row gap-2 mt-4 justify-content-center">
+                    <p class="crypt-grayscale-500">Already have an account?</p>
+                    <a href="login.html" class="link-primary fw-bold">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal (Connect Wallet) -->
+    <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <div>
+                        <h5 class="crypt-grayscale-100 fw-bold mb-0">Connect a wallet</h5>
+                        <p class="crypt-grayscale-500 mb-0">Choose your favourite wallet to log in.</p>
+                    </div>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <small class="crypt-grayscale-500">Popular wallet</small>
+                    <div class="flex mt-2">
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Metamask 
+                            <img src="../static/images/icon/metamask.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            WalletConnect 
+                            <img src="../static/images/icon/walletconnect.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Phantom 
+                            <img src="../static/images/icon/phantom.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Coinbase Wallet 
+                            <img src="../static/images/icon/coinbase.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Rainbow 
+                            <img src="../static/images/icon/rainbow.svg" alt="" width="32">
+                        </a>
+                    </div>
+                    <div class="text-center mt-4 mb-4">
+                        <a class="text-link fs-6 crypt-grayscale-500 fw-medium " href="login.html">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.5 10.5V14.5H17.5C16.9696 14.5 16.4609 14.2893 16.0858 13.9142C15.7107 13.5391 15.5 13.0304 15.5 12.5C15.5 11.9696 15.7107 11.4609 16.0858 11.0858C16.4609 10.7107 16.9696 10.5 17.5 10.5H21.5ZM18 12.69C18.0149 12.6275 18.0149 12.5625 18 12.5C18.0008 12.4344 17.9879 12.3694 17.962 12.3091C17.9362 12.2489 17.898 12.1946 17.85 12.15C17.7565 12.0584 17.6309 12.0071 17.5 12.0071C17.3691 12.0071 17.2435 12.0584 17.15 12.15C17.102 12.1946 17.0638 12.2489 17.038 12.3091C17.0121 12.3694 16.9992 12.4344 17 12.5C16.9979 12.5658 17.0102 12.6312 17.0362 12.6916C17.0621 12.7521 17.1009 12.8062 17.15 12.85C17.1949 12.8978 17.2491 12.936 17.3093 12.962C17.3695 12.9881 17.4344 13.0015 17.5 13.0015C17.5656 13.0015 17.6305 12.9881 17.6907 12.962C17.7509 12.936 17.8051 12.8978 17.85 12.85C17.9154 12.8136 17.9679 12.7576 18 12.69Z" fill="#facc15"/>
+                                <path d="M18 12.5C18.0149 12.5625 18.0149 12.6275 18 12.69C17.9787 12.7524 17.9407 12.8078 17.89 12.85C17.8451 12.8978 17.7909 12.936 17.7307 12.962C17.6705 12.9881 17.6056 13.0015 17.54 13.0015C17.4744 13.0015 17.4095 12.9881 17.3493 12.962C17.2891 12.936 17.2349 12.8978 17.19 12.85C17.1336 12.8102 17.0872 12.7579 17.0542 12.6972C17.0213 12.6365 17.0027 12.569 17 12.5C16.9992 12.4344 17.0122 12.3694 17.038 12.3091C17.0638 12.2489 17.102 12.1947 17.15 12.15C17.2435 12.0584 17.3692 12.0071 17.5 12.0071C17.6309 12.0071 17.7566 12.0584 17.85 12.15C17.8981 12.1947 17.9362 12.2489 17.9621 12.3091C17.9879 12.3694 18.0008 12.4344 18 12.5Z" fill="currentColor"/>
+                                <path d="M18.5 20H5.5C4.83696 20 4.20107 19.7366 3.73223 19.2678C3.26339 18.7989 3 18.163 3 17.5V7.5C3 6.83696 3.26339 6.20107 3.73223 5.73223C4.20107 5.26339 4.83696 5 5.5 5H18.5C19.163 5 19.7989 5.26339 20.2678 5.73223C20.7366 6.20107 21 6.83696 21 7.5V10.5C21 10.6326 20.9473 10.7598 20.8536 10.8536C20.7598 10.9473 20.6326 11 20.5 11C20.3674 11 20.2402 10.9473 20.1464 10.8536C20.0527 10.7598 20 10.6326 20 10.5V7.5C20 7.10218 19.842 6.72064 19.5607 6.43934C19.2794 6.15804 18.8978 6 18.5 6H5.5C5.10218 6 4.72064 6.15804 4.43934 6.43934C4.15804 6.72064 4 7.10218 4 7.5V17.5C4 17.8978 4.15804 18.2794 4.43934 18.5607C4.72064 18.842 5.10218 19 5.5 19H18.5C18.8978 19 19.2794 18.842 19.5607 18.5607C19.842 18.2794 20 17.8978 20 17.5V14.5C20 14.3674 20.0527 14.2402 20.1464 14.1464C20.2402 14.0527 20.3674 14 20.5 14C20.6326 14 20.7598 14.0527 20.8536 14.1464C20.9473 14.2402 21 14.3674 21 14.5V17.5C21 18.163 20.7366 18.7989 20.2678 19.2678C19.7989 19.7366 19.163 20 18.5 20Z" fill="currentColor"/>
+                                <path d="M21.5 15.0001H17.5C16.837 15.0001 16.2011 14.7367 15.7323 14.2679C15.2634 13.799 15 13.1632 15 12.5001C14.9985 12.1706 15.0633 11.8441 15.1904 11.54C15.3175 11.2359 15.5044 10.9605 15.74 10.7301C15.9691 10.4961 16.243 10.3109 16.5455 10.1854C16.8479 10.06 17.1726 9.99694 17.5 10.0001H21.5C21.6326 10.0001 21.7598 10.0528 21.8536 10.1466C21.9473 10.2403 22 10.3675 22 10.5001V14.5001C22 14.6327 21.9473 14.7599 21.8536 14.8537C21.7598 14.9474 21.6326 15.0001 21.5 15.0001ZM17.5 11.0001C17.1038 11.0053 16.7253 11.165 16.4451 11.4452C16.1649 11.7254 16.0052 12.1039 16 12.5001C16 12.8979 16.1581 13.2795 16.4394 13.5608C16.7207 13.8421 17.1022 14.0001 17.5 14.0001H21V11.0001H17.5Z" fill="currentColor"/>
+                            </svg>
+                            I don't have a wallet
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex flex-column justify-content-center">
+                    <p class="text-sm crypt-grayscale-400">By connecting your wallet you agree to the</p>
+                    <a href="#" class="text-sm">Terms of Service</a>
+                </div>
+            </div>
+    </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="container-fluid text-left text-lg-start animation-element">
+        <div class="container in-view">
+            <!-- Link -->
+            <div class="d-flex justify-content-center gap-4 crypt-footer-copyright border-0 mb-3 mt-3">
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Docs
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Cookies
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Terms
+                </a>
+                <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                    Privacy
+                </a>
+            </div>
+      </div>
+    
+    </footer>
+    
+    <!-- Main Content End -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" ></script>
+    <script src="../static/js/particle-canvas.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
+</html>

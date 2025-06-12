@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crypt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/svg" href="{{ url_for('static', filename='images/favicon.svg') }}">
+</head>
+<body class="crypt-dark">
+<header class="crypt-header blur-header align-items-center fixed-top z-3">
+    <div class="row align-items-center justify-content-between">
+        <div class="col-auto d-flex flex-row align-items-center">
+            <div class="crypt-logo dark">
+                <a href="{{ url_for('login') }}">
+                    <img src="{{ url_for('static', filename='images/logo-dark.svg') }}" alt="">
+                </a>
+            </div>
+            <div class="crypt-logo light">
+                <a href="{{ url_for('login') }}">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="col-auto d-flex flex-row align-items-center">
+            <div class="user-settings gap-2 gap-sm-3">
+                <div class="flex">
+                    <button id="darkMode">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="sun">
+                            <path
+                                    d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Language dropdown-->
+          <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                {{ g.locale }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                {% for lang in languages %}
+                    <li><a class="dropdown-item" href="{{ url_for('set_language', language=lang) }}">{{ lang }}</a></li>
+                {% endfor %}
+            </ul>
+
+         </div>
+        </div>
+    </div>
+</header>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="crypt-login-form mt-5">
+            <div class="d-flex justify-content-between mb-4 text-center">
+                <h3 class="fw-bold">{{ _('Log in') }}</h3>
+            </div>
+            <form class="needs-validation" method="POST" novalidate>
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-column mb-3">
+                        <label for="email" class="form-label text-light">{{ _('Email/Phone Number') }} <span
+                                class="crypt-grayscale-600">*</span></label>
+                        <input type="email" class="form-control py-2" name="email" id="email"
+                               placeholder="{{ _('Email/Phone Number') }}" required>
+                        <div class="invalid-feedback mt-0">{{ _('This field is required.') }}</div>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <div class="d-flex justify-content-between">
+                            <label for="password" class="form-label text-light">{{ _('Password') }} <span
+                                    class="crypt-grayscale-600">*</span></label>
+                            <a href="#!" class="link-primary text-sm text-decoration-none">{{ _('Forgot password?') }}</a>
+                        </div>
+                        <div class="input-group-append">
+                            <input type="password" class="form-control form-controls py-2" name="password" id="password"
+                                   value="" placeholder="{{ _('Login Password') }}" required>
+                            <div class="eye fright"><i class="fa fa-eye" id="eye" onclick="toggle()"></i></div>
+                            <div class="invalid-feedback mt-0">{{ _('This field is required.') }}</div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" name="remember_me"
+                                   id="remember_me">
+                            <label class="form-check-label text-secondary" for="remember_me">
+                                {{ _('Remember me') }}
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary rounded-pill text-center mt-4" type="submit">{{ _('Continue') }}</button>
+                </div>
+                {% if error %}
+                <div class="alert alert-danger mt-3">{{ error }}</div>
+                {% endif %}
+            </form>
+            <div class="d-flex flex-row gap-2 mt-4 justify-content-center">
+                <p class="crypt-grayscale-500">{{ _("Don't have an account?") }}</p>
+                <a href="./signup.html" class="link-primary fw-bold">{{ _('Sign up') }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid text-left text-lg-start animation-element">
+    <div class="container in-view">
+        <div class="d-flex justify-content-center gap-4 crypt-footer-copyright border-0 mb-3 mt-3">
+            <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                {{ _('Docs') }}
+            </a>
+            <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                {{ _('Cookies') }}
+            </a>
+            <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                {{ _('Terms') }}
+            </a>
+            <a class="text-link text-sm crypt-grayscale-600" href="#!">
+                {{ _('Privacy') }}
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" ></script>
+<script src="{{ url_for('static', filename='js/particle-canvas.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

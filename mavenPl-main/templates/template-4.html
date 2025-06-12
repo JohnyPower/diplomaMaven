@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crypt</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <link rel="stylesheet" href="../static/css/gsap.css">
+    <link rel="icon" type="image/svg" href="../static/images/favicon.svg">
+</head>
+<body class="crypt-dark section-dark">
+    <!-- Header/Hero -->
+    <section class="container-fluid">        
+        <div class="container-fluid temp4-bg animation-element mt-3">
+            <!-- Particle Canvas -->
+            <div class="row">
+                <canvas id="particleCanvas"></canvas>
+            </div>
+            <!-- Header -->
+            <header class="header-boxed border-bottom-0 mt-2 z-3">
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    <!-- Logo -->
+                    <div class="crypt-logo dark">
+                        <a href="template-1.html">
+                            <img src="../static/images/logo-dark.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="crypt-logo light">
+                        <a href="template-1.html">
+                            <img src="../static/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <!-- Menu item -->
+                    <div class="transparent-menu-bg flex hidesmscreen in-view">
+                        <ul class="d-flex flex-row gap-4 align-items-center px-2 m-0">
+                            <!-- Dropdown (Landing Page) -->
+                            <li class="dropdown nav-item profile_menu">
+                                <a class="nav-link crypto-has-dropdown fw-medium" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Landing Page
+                                    <svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                        <path fill="none" stroke="#ffffff70" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                    </svg>
+                                </a>
+                                <ul class="profile_menu dropdown-menu dropdown-menu-shows">
+                                    <li><a class="dropdown-item" href="./template-1.html">Template 1</a></li>
+                                    <li><a class="dropdown-item" href="./template-2.html">Template 2</a></li>
+                                    <li><a class="dropdown-item" href="./template-3.html">Template 3</a></li>
+                                    <li><a class="dropdown-item" href="./template-4.html">Template 4</a></li>
+                                    <li><a class="dropdown-item" href="./template-5.html">Template 5</a></li>
+                                </ul>
+                            </li>
+                            <!-- Dropdown (Exchange) -->
+                            <li class="nav-item dropdown profile_menu">
+                                <a class="nav-link crypto-has-dropdown fw-medium" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Exchange
+                                    <svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                        <path fill="none" stroke="#ffffff70" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                    </svg>
+                                </a>
+                                <ul class="profile_menu dropdown-menu dropdown-menu-shows">
+                                    <li><a class="dropdown-item" href="./dashboard.html">Dashboard 1</a></li>
+                                    <li><a class="dropdown-item" href="./dashboard-2.html">Dashboard 2</a></li>
+                                    <li><a class="dropdown-item" href="./dashboard-3.html">Dashboard 3</a></li>
+                                    <li><a class="dropdown-item" href="./dashboard-4.html">Dashboard 4</a></li>
+                                    <li><a class="dropdown-item" href="./dashboard-5.html">Dashboard 5</a></li>
+                                </ul>
+                            </li>
+                            <!-- Dropdown (Markets) -->
+                            <li class="nav-item dropdown profile_menu">
+                                <a class="nav-link crypto-has-dropdown fw-medium" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Markets
+                                    <svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                        <path fill="none" stroke="#ffffff70" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                    </svg>
+                                </a>
+                                <ul class="profile_menu dropdown-menu dropdown-menu-shows">
+                                    <li><a class="dropdown-item" href="./market.html">All Market</a></li>
+                                    <li><a class="dropdown-item" href="./highlights.html">Crypto Highlights</a></li>
+                                    <li><a class="dropdown-item" href="./marketcap.html">Market Cap</a></li>
+                                    <li><a class="dropdown-item" href="./symbols.html">Symbols</a></li>
+                                </ul>
+                            </li>
+                            <!-- Dropdown (Blog) -->
+                            <li class="nav-item dropdown profile_menu">
+                                <a class="nav-link crypto-has-dropdown fw-medium" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Blog
+                                    <svg xmlns="http://www.w3.org/2000/svg"  x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                        <path fill="none" stroke="#ffffff70" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                    </svg>
+                                </a>
+                                <ul class="profile_menu dropdown-menu dropdown-menu-shows">
+                                    <li><a class="dropdown-item" href="./blog.html">Blog Classic</a></li>
+                                    <li><a class="dropdown-item" href="./blog-single.html">Blog Single</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Navigation menu / Button -->
+                    <div class="col-auto d-flex flex-row align-items-center">
+                        <div class="user-settings gap-2 gap-sm-3">
+                            <!-- Call to Action -->
+                            <div class="flex disable-sm-screen">
+                                <a class="btn btn-editor btn-primary" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Add Funds</a>
+                            </div>
+                            <!-- Modal (Profile) -->
+                            <div class="profile_menu d-flex align-items-center">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle no-active d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+                                        data-bs-auto-close="outside" aria-expanded="false">
+                                        <img alt="" src="../static/images/social/user.png">
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="wallet align-items-center">
+                                            <img alt="" src="../static/images/social/user.png">
+                                            <div class="d-grid">
+                                                <h6 class="fw-bold crypt-grayscale-100 mb-0">jh***@gmail.com</h6>
+                                                <a class="d-flex gap-2 mb-2 verified mt-2" href="#!">
+                                                    <p class="crypt-grayscale-600 mb-0">UID:</p>
+                                                    <p class="crypt-grayscale-100 mb-0">35403204</p>
+                                                    <div class="crypt-grayscale-500" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M9.15556 5C6.8605 5 5 6.8605 5 9.15556V12.48C5 14.5149 6.46269 16.2083 8.39406 16.566C8.75174 18.4974 10.4451 19.96 12.48 19.96H15.8044C18.0995 19.96 19.96 18.0995 19.96 15.8044V12.48C19.96 10.4451 18.4974 8.75174 16.566 8.39406C16.2083 6.46269 14.5149 5 12.48 5H9.15556ZM14.8315 8.32444C14.4892 7.35604 13.5657 6.66222 12.48 6.66222H9.15556C7.77853 6.66222 6.66222 7.77853 6.66222 9.15556V12.48C6.66222 13.5657 7.35603 14.4892 8.32444 14.8315V12.48C8.32444 10.1849 10.1849 8.32444 12.48 8.32444H14.8315ZM9.98667 12.48C9.98667 11.103 11.103 9.98667 12.48 9.98667H15.8044C17.1814 9.98667 18.2978 11.103 18.2978 12.48V15.8044C18.2978 17.1814 17.1814 18.2978 15.8044 18.2978H12.48C11.103 18.2978 9.98667 17.1814 9.98667 15.8044V12.48Z"
+                                                            fill="currentColor" />
+                                                        </svg>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="mt-2">
+                                        <a class="dropdown-item" href="./my-dashboard.html">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="currentColor"/>
+                                                <path opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="currentColor"/>
+                                                <path d="M6.29 10.58C8.6593 10.58 10.58 8.6593 10.58 6.29C10.58 3.9207 8.6593 2 6.29 2C3.9207 2 2 3.9207 2 6.29C2 8.6593 3.9207 10.58 6.29 10.58Z" fill="currentColor"/>
+                                                <path d="M17.7099 22C20.0792 22 21.9999 20.0793 21.9999 17.71C21.9999 15.3407 20.0792 13.42 17.7099 13.42C15.3406 13.42 13.4199 15.3407 13.4199 17.71C13.4199 20.0793 15.3406 22 17.7099 22Z" fill="currentColor"/>
+                                            </svg>
+                                            Dashboard
+                                        </a>
+                                        <a class="dropdown-item" href="./my-asset.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.0602 11.8201L20.9002 11.6001C20.6202 11.2601 20.2902 10.9901 19.9102 10.7901C19.4002 10.5001 18.8202 10.3501 18.2202 10.3501H5.7702C5.1702 10.3501 4.6002 10.5001 4.0802 10.7901C3.6902 11.0001 3.3402 11.2901 3.0502 11.6501C2.4802 12.3801 2.2102 13.2801 2.3002 14.1801L2.6702 18.8501C2.8002 20.2601 2.9702 22.0001 6.1402 22.0001H17.8602C21.0302 22.0001 21.1902 20.2601 21.3302 18.8401L21.7002 14.1901C21.7902 13.3501 21.5702 12.5101 21.0602 11.8201ZM14.3902 17.3401H9.6002C9.2102 17.3401 8.9002 17.0201 8.9002 16.6401C8.9002 16.2601 9.2102 15.9401 9.6002 15.9401H14.3902C14.7802 15.9401 15.0902 16.2601 15.0902 16.6401C15.0902 17.0301 14.7802 17.3401 14.3902 17.3401Z" fill="currentColor"/>
+                                            <path opacity="0.4" d="M3.37988 11.31C3.59988 11.11 3.81988 10.93 4.07988 10.79C4.58988 10.5 5.16988 10.35 5.76988 10.35H18.2299C18.8299 10.35 19.3999 10.5 19.9199 10.79C20.1799 10.93 20.4099 11.11 20.6199 11.32V10.79V9.82C20.6199 6.25 19.5299 5.16 15.9599 5.16H13.5799C13.1399 5.16 13.1299 5.15 12.8699 4.81L11.6699 3.2C11.0999 2.46 10.6499 2 9.21988 2H8.03988C4.46988 2 3.37988 3.09 3.37988 6.66V10.8V11.31Z" fill="currentColor"/>
+                                            </svg>
+                                            My Asset
+                                        </a>
+                                        <a class="dropdown-item" href="./order-history.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M6.73049 19.7C7.55049 18.82 8.80049 18.89 9.52049 19.85L10.5305 21.2C11.3405 22.27 12.6505 22.27 13.4605 21.2L14.4705 19.85C15.1905 18.89 16.4405 18.82 17.2605 19.7C19.0405 21.6 20.4905 20.97 20.4905 18.31V7.04C20.5005 3.01 19.5605 2 15.7805 2H8.22049C4.44049 2 3.50049 3.01 3.50049 7.04V18.3C3.50049 20.97 4.96049 21.59 6.73049 19.7Z" fill="currentColor"/>
+                                                <path d="M16.2305 11.75H10.7305C10.3205 11.75 9.98047 11.41 9.98047 11C9.98047 10.59 10.3205 10.25 10.7305 10.25H16.2305C16.6405 10.25 16.9805 10.59 16.9805 11C16.9805 11.41 16.6405 11.75 16.2305 11.75Z" fill="currentColor"/>
+                                                <path d="M16.2305 7.75H10.7305C10.3205 7.75 9.98047 7.41 9.98047 7C9.98047 6.59 10.3205 6.25 10.7305 6.25H16.2305C16.6405 6.25 16.9805 6.59 16.9805 7C16.9805 7.41 16.6405 7.75 16.2305 7.75Z" fill="currentColor"/>
+                                                <path d="M7.78027 8C7.23027 8 6.78027 7.55 6.78027 7C6.78027 6.45 7.23027 6 7.78027 6C8.33027 6 8.78027 6.45 8.78027 7C8.78027 7.55 8.33027 8 7.78027 8Z" fill="currentColor"/>
+                                                <path d="M7.78027 12C7.23027 12 6.78027 11.55 6.78027 11C6.78027 10.45 7.23027 10 7.78027 10C8.33027 10 8.78027 10.45 8.78027 11C8.78027 11.55 8.33027 12 7.78027 12Z" fill="currentColor"/>
+                                            </svg>
+                                            My Orders
+                                        </a>
+                                        <a class="dropdown-item" href="./export.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M20.5 10.19H17.61C15.24 10.19 13.31 8.26 13.31 5.89V3C13.31 2.45 12.86 2 12.31 2H8.07C4.99 2 2.5 4 2.5 7.57V16.43C2.5 20 4.99 22 8.07 22H15.93C19.01 22 21.5 20 21.5 16.43V11.19C21.5 10.64 21.05 10.19 20.5 10.19Z" fill="currentColor"></path>
+                                                <path d="M15.8 2.20999C15.39 1.79999 14.68 2.07999 14.68 2.64999V6.13999C14.68 7.59999 15.92 8.80999 17.43 8.80999C18.38 8.81999 19.7 8.81999 20.83 8.81999C21.4 8.81999 21.7 8.14999 21.3 7.74999C19.86 6.29999 17.28 3.68999 15.8 2.20999Z" fill="currentColor"></path>
+                                                <path d="M12.28 14.72C11.99 14.43 11.51 14.43 11.22 14.72L10.5 15.44V11.25C10.5 10.84 10.16 10.5 9.75 10.5C9.34 10.5 9 10.84 9 11.25V15.44L8.28 14.72C7.99 14.43 7.51 14.43 7.22 14.72C6.93 15.01 6.93 15.49 7.22 15.78L9.22 17.78C9.23 17.79 9.24 17.79 9.24 17.8C9.3 17.86 9.38 17.91 9.46 17.95C9.56 17.98 9.65 18 9.75 18C9.85 18 9.94 17.98 10.03 17.94C10.12 17.9 10.2 17.85 10.28 17.78L12.28 15.78C12.57 15.49 12.57 15.01 12.28 14.72Z" fill="currentColor"></path>
+                                            </svg>
+                                            Export History
+                                        </a>
+                                        <a class="dropdown-item" href="./identification.html">
+                                            <div class="d-flex flex-row align-items-center gap-1">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18 13C17.06 13 16.19 13.33 15.5 13.88C14.58 14.61 14 15.74 14 17C14 17.75 14.21 18.46 14.58 19.06C15.27 20.22 16.54 21 18 21C19.01 21 19.93 20.63 20.63 20C20.94 19.74 21.21 19.42 21.42 19.06C21.79 18.46 22 17.75 22 17C22 14.79 20.21 13 18 13ZM20.07 16.57L17.94 18.54C17.8 18.67 17.61 18.74 17.43 18.74C17.24 18.74 17.05 18.67 16.9 18.52L15.91 17.53C15.62 17.24 15.62 16.76 15.91 16.47C16.2 16.18 16.68 16.18 16.97 16.47L17.45 16.95L19.05 15.47C19.35 15.19 19.83 15.21 20.11 15.51C20.39 15.81 20.37 16.28 20.07 16.57Z" fill="currentColor"></path>
+                                                    <path opacity="0.4" d="M21.09 21.5C21.09 21.78 20.87 22 20.59 22H3.41003C3.13003 22 2.91003 21.78 2.91003 21.5C2.91003 17.36 6.99003 14 12 14C13.03 14 14.03 14.14 14.95 14.41C14.36 15.11 14 16.02 14 17C14 17.75 14.21 18.46 14.58 19.06C14.78 19.4 15.04 19.71 15.34 19.97C16.04 20.61 16.97 21 18 21C19.12 21 20.13 20.54 20.85 19.8C21.01 20.34 21.09 20.91 21.09 21.5Z" fill="currentColor"></path>
+                                                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"></path>
+                                                </svg>
+                                                Identity Verification
+                                                <span class="verified alert align-items-center d-flex mb-0">
+                                                    Verified
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="./settings.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z" fill="currentColor"/>
+                                                <path d="M12 15.25C13.7949 15.25 15.25 13.7949 15.25 12C15.25 10.2051 13.7949 8.75 12 8.75C10.2051 8.75 8.75 10.2051 8.75 12C8.75 13.7949 10.2051 15.25 12 15.25Z" fill="currentColor"/>
+                                            </svg>
+                                            Account Settings
+                                        </a>
+                                        <a class="dropdown-item" href="./security.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M20.91 11.12C20.91 16.01 17.36 20.59 12.51 21.93C12.18 22.02 11.82 22.02 11.49 21.93C6.63996 20.59 3.08997 16.01 3.08997 11.12V6.73006C3.08997 5.91006 3.70998 4.98007 4.47998 4.67007L10.05 2.39007C11.3 1.88007 12.71 1.88007 13.96 2.39007L19.53 4.67007C20.29 4.98007 20.92 5.91006 20.92 6.73006L20.91 11.12Z" fill="currentColor"></path>
+                                                <path d="M14.5 10.5C14.5 9.12 13.38 8 12 8C10.62 8 9.5 9.12 9.5 10.5C9.5 11.62 10.24 12.55 11.25 12.87V15.5C11.25 15.91 11.59 16.25 12 16.25C12.41 16.25 12.75 15.91 12.75 15.5V12.87C13.76 12.55 14.5 11.62 14.5 10.5Z" fill="currentColor"></path>
+                                            </svg>
+                                            Security
+                                        </a>
+                                        <a class="dropdown-item" href="./api.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 8H8V16H16V8Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M5 22C6.65 22 8 20.65 8 19V16H5C3.35 16 2 17.35 2 19C2 20.65 3.35 22 5 22Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M5 8H8V5C8 3.35 6.65 2 5 2C3.35 2 2 3.35 2 5C2 6.65 3.35 8 5 8Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M16 8H19C20.65 8 22 6.65 22 5C22 3.35 20.65 2 19 2C17.35 2 16 3.35 16 5V8Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M19 22C20.65 22 22 20.65 22 19C22 17.35 20.65 16 19 16H16V19C16 20.65 17.35 22 19 22Z" fill="currentColor"></path>
+                                            </svg>
+                                            API Management
+                                        </a>
+                                        <a class="dropdown-item" href="./rewards.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M18 20.5H17V20.25C17 19.15 16.1 18.25 15 18.25H12.75V15.96C12.5 15.99 12.25 16 12 16C11.75 16 11.5 15.99 11.25 15.96V18.25H9C7.9 18.25 7 19.15 7 20.25V20.5H6C5.59 20.5 5.25 20.84 5.25 21.25C5.25 21.66 5.59 22 6 22H18C18.41 22 18.75 21.66 18.75 21.25C18.75 20.84 18.41 20.5 18 20.5Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M5.51979 11.64C4.85979 11.39 4.27979 10.98 3.81979 10.52C2.88979 9.49 2.27979 8.26 2.27979 6.82C2.27979 5.38 3.40979 4.25 4.84979 4.25H5.40979C5.14979 4.78 4.99979 5.37 4.99979 6V9C4.99979 9.94 5.17979 10.83 5.51979 11.64Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M21.72 6.82C21.72 8.26 21.11 9.49 20.18 10.52C19.72 10.98 19.14 11.39 18.48 11.64C18.82 10.83 19 9.94 19 9V6C19 5.37 18.85 4.78 18.59 4.25H19.15C20.59 4.25 21.72 5.38 21.72 6.82Z" fill="currentColor"></path>
+                                                <path d="M15 2H9C6.79 2 5 3.79 5 6V9C5 12.87 8.13 16 12 16C15.87 16 19 12.87 19 9V6C19 3.79 17.21 2 15 2ZM14.84 8.45L14.22 9.21C14.12 9.32 14.05 9.54 14.06 9.69L14.12 10.67C14.16 11.27 13.73 11.58 13.17 11.36L12.26 11C12.12 10.95 11.88 10.95 11.74 11L10.83 11.36C10.27 11.58 9.84 11.27 9.88 10.67L9.94 9.69C9.95 9.54 9.88 9.32 9.78 9.21L9.16 8.45C8.77 7.99 8.94 7.48 9.52 7.33L10.47 7.09C10.62 7.05 10.8 6.91 10.88 6.78L11.41 5.96C11.74 5.45 12.26 5.45 12.59 5.96L13.12 6.78C13.2 6.91 13.38 7.05 13.53 7.09L14.48 7.33C15.06 7.48 15.23 7.99 14.84 8.45Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M14.8402 8.45014L14.2202 9.21014C14.1202 9.32014 14.0502 9.54014 14.0602 9.69014L14.1202 10.6701C14.1602 11.2701 13.7302 11.5801 13.1702 11.3601L12.2602 11.0001C12.1202 10.9501 11.8802 10.9501 11.7402 11.0001L10.8302 11.3601C10.2702 11.5801 9.84024 11.2701 9.88024 10.6701L9.94023 9.69014C9.95023 9.54014 9.88023 9.32014 9.78023 9.21014L9.16023 8.45014C8.77024 7.99014 8.94024 7.48014 9.52024 7.33014L10.4702 7.09014C10.6202 7.05014 10.8002 6.91014 10.8802 6.78014L11.4102 5.96014C11.7402 5.45014 12.2602 5.45014 12.5902 5.96014L13.1202 6.78014C13.2002 6.91014 13.3802 7.05014 13.5302 7.09014L14.4802 7.33014C15.0602 7.48014 15.2302 7.99014 14.8402 8.45014Z" fill="currentColor"></path>
+                                            </svg>
+                                            Reward Hub
+                                        </a>
+                                        <a class="dropdown-item" href="./login.html"> 
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M16.19 2H7.82002C4.18002 2 2.01001 4.17 2.01001 7.81V16.18C2.01001 19.82 4.18002 21.99 7.82002 21.99H16.19C19.83 21.99 22 19.82 22 16.18V7.81C22 4.17 19.83 2 16.19 2Z" fill="currentColor"/>
+                                                <path d="M9.16985 14.0899C9.35985 14.0899 9.54985 14.0199 9.69985 13.8699L14.0799 9.48992V11.9199C14.0799 12.3299 14.4199 12.6699 14.8299 12.6699C15.2399 12.6699 15.5799 12.3299 15.5799 11.9199V7.67992C15.5799 7.57992 15.5599 7.48992 15.5199 7.38992C15.4399 7.20992 15.2998 7.05993 15.1098 6.97993C15.0198 6.93993 14.9199 6.91992 14.8199 6.91992H10.5799C10.1699 6.91992 9.82985 7.25992 9.82985 7.66992C9.82985 8.07992 10.1699 8.41992 10.5799 8.41992H13.0098L8.62985 12.7999C8.33985 13.0899 8.33985 13.5699 8.62985 13.8599C8.78985 14.0199 8.97985 14.0899 9.16985 14.0899Z" fill="currentColor"/>
+                                                <path d="M18.7099 16.28C18.5799 15.89 18.1599 15.68 17.7599 15.81C14.0399 17.05 9.94993 17.05 6.22993 15.81C5.83993 15.68 5.40994 15.89 5.27994 16.28C5.14994 16.67 5.35994 17.1 5.74994 17.23C7.75994 17.9 9.86994 18.24 11.9899 18.24C14.1099 18.24 16.2199 17.9 18.2299 17.23C18.6299 17.09 18.8399 16.67 18.7099 16.28Z" fill="currentColor"/>
+                                            </svg>
+                                            Log Out
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Notification -->
+                            <div class="flex">
+                                <a href="#!" class="notify" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNotify">
+                                    <div class="notification"></div>
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M18.707 8.796c0 1.256.332 1.997 1.063 2.85.553.628.73 1.435.73 2.31 0 .874-.287 1.704-.863 2.378a4.537 4.537 0 01-2.9 1.413c-1.571.134-3.143.247-4.736.247-1.595 0-3.166-.068-4.737-.247a4.532 4.532 0 01-2.9-1.413 3.616 3.616 0 01-.864-2.378c0-.875.178-1.682.73-2.31.754-.854 1.064-1.594 1.064-2.85V8.37c0-1.682.42-2.781 1.283-3.858C7.861 2.942 9.919 2 11.956 2h.09c2.08 0 4.204.987 5.466 2.625.82 1.054 1.195 2.108 1.195 3.745v.426zM9.074 20.061c0-.504.462-.734.89-.833.5-.106 3.545-.106 4.045 0 .428.099.89.33.89.833-.025.48-.306.904-.695 1.174a3.635 3.635 0 01-1.713.731 3.795 3.795 0 01-1.008 0 3.618 3.618 0 01-1.714-.732c-.39-.269-.67-.694-.695-1.173z" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <!-- Dark | Light Mode -->
+                            <div class="flex">
+                                <button id="darkMode">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="sun">
+                                      <path d="M10 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 2ZM10 15a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 10 15ZM10 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM15.657 5.404a.75.75 0 1 0-1.06-1.06l-1.061 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM6.464 14.596a.75.75 0 1 0-1.06-1.06l-1.06 1.06a.75.75 0 0 0 1.06 1.06l1.06-1.06ZM18 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 18 10ZM5 10a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1 0-1.5h1.5A.75.75 0 0 1 5 10ZM14.596 15.657a.75.75 0 0 0 1.06-1.06l-1.06-1.061a.75.75 0 1 0-1.06 1.06l1.06 1.06ZM5.404 6.464a.75.75 0 0 0 1.06-1.06l-1.06-1.06a.75.75 0 1 0-1.061 1.06l1.06 1.06Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <!-- Hamburger Menu -->
+                            <div id="mobile_menu" class="close">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Offcanvas Navbar -->
+            <nav class="navbar py-0 navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar">
+                        <!-- Header -->
+                        <div class="offcanvas-header card-line">
+                            <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">// Crypt</h5>
+                            <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Body -->
+                        <div class="offcanvas-body">
+                            <!-- Search -->
+                            <form class="d-flex" role="search">
+                                <input type="text" class="search search-input form-control form-control-lg text-sm" placeholder="Search coin">
+                            </form>
+                            <!-- Menu -->
+                            <ul class="navbar-nav justify-content-end flex-grow-1 gap-2 mt-3 pb-3">
+                                <li class="nav-item dropdown crypto-has-dropdown">
+                                    <a class="nav-link" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Landing Page
+                                        <svg class="fright mt-1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark g-2">
+                                        <li><a class="dropdown-item" href="./template-1.html">Template 1</a></li>
+                                        <li><a class="dropdown-item" href="./template-2.html">Template 2</a></li>
+                                        <li><a class="dropdown-item" href="./template-3.html">Template 3</a></li>
+                                        <li><a class="dropdown-item" href="./template-4.html">Template 4</a></li>
+                                        <li><a class="dropdown-item" href="./template-5.html">Template 5</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown crypto-has-dropdown">
+                                    <a class="nav-link" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Exchange
+                                        <svg class="fright mt-1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="./dashboard-1.html">Dashboard 1</a></li>
+                                        <li><a class="dropdown-item" href="./dashboard-2.html">Dashboard 2</a></li>
+                                        <li><a class="dropdown-item" href="./dashboard-3.html">Dashboard 3</a></li>
+                                        <li><a class="dropdown-item" href="./dashboard-4.html">Dashboard 4</a></li>
+                                        <li><a class="dropdown-item" href="./dashboard-5.html">Dashboard 5</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown crypto-has-dropdown">
+                                    <a class="nav-link" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Markets
+                                        <svg class="fright mt-1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="dropdown-item" href="./market.html">All Market</a></li>
+                                        <li><a class="dropdown-item" href="./highlights.html">Crypto Highlights</a></li>
+                                        <li><a class="dropdown-item" href="./marketcap.html">Market Cap</a></li>
+                                        <li><a class="dropdown-item" href="./symbols.html">Symbols</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown crypto-has-dropdown">
+                                    <a class="nav-link" href="#!" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Blog
+                                        <svg class="fright mt-1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" version="1.1" viewBox="0 0 29 29" xml:space="preserve">
+                                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m20.5 11.5-6 6-6-6"></path>
+                                        </svg>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                        <li><a class="nav-link" href="./blog.html">Blog Classic</a></li>
+                                        <li><a class="nav-link" href="./blog-single.html">Blog Single</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- Dropdown (Assets) -->
+                            <div class="dropdown-menu-dark card-bs gd-bg p-2 pb-2">
+                                <div class="d-flex flex-column card-bs-tabs p-2 mb-3">
+                                    <div class="d-flex gap-1">
+                                        <p class="text-sm fw-bold crypt-grayscale-600 mb-0">Total Assets</p>
+                                    </div>
+                                    <div class="d-flex flex-row gap-2 align-items-center">
+                                        <div class="flex">
+                                            <h4 class="fw-bold mb-0 encrypted">4.55</h4>
+                                        </div>
+                                        <div class="flex">
+                                            <select class="form-select text-bg-bs2 crypt-grayscale-600">
+                                                <option selected>BTC</option>
+                                                <option value="1">ETH</option>
+                                                <option value="2">BNB</option>
+                                                <option value="3">USDT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <h6 class="text-sm crypt-grayscale-600 encrypted">≈ $99,738.50 USDT</h6>
+                                    </div>
+                                </div>
+                                <!-- Menu Item -->
+                                <ul class="d-flex flex-column profile_menu gap-2">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./my-dashboard.html">
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z" fill="currentColor"/>
+                                                <path opacity="0.4" d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z" fill="currentColor"/>
+                                                <path d="M6.29 10.58C8.6593 10.58 10.58 8.6593 10.58 6.29C10.58 3.9207 8.6593 2 6.29 2C3.9207 2 2 3.9207 2 6.29C2 8.6593 3.9207 10.58 6.29 10.58Z" fill="currentColor"/>
+                                                <path d="M17.7099 22C20.0792 22 21.9999 20.0793 21.9999 17.71C21.9999 15.3407 20.0792 13.42 17.7099 13.42C15.3406 13.42 13.4199 15.3407 13.4199 17.71C13.4199 20.0793 15.3406 22 17.7099 22Z" fill="currentColor"/>
+                                            </svg>
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./marketplace.html"> 
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.9597 17.84L19.3297 18.39C18.8797 18.54 18.5197 18.89 18.3697 19.35L17.8197 20.98C17.3497 22.39 15.3697 22.36 14.9297 20.95L13.0797 15C12.7197 13.82 13.8097 12.72 14.9797 13.09L20.9397 14.94C22.3397 15.38 22.3597 17.37 20.9597 17.84Z" fill="currentColor"/>
+                                                <path opacity="0.4" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" fill="currentColor"/>
+                                            </svg>
+                                            Marketplace
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./my-asset.html"> 
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M21.0602 11.8201L20.9002 11.6001C20.6202 11.2601 20.2902 10.9901 19.9102 10.7901C19.4002 10.5001 18.8202 10.3501 18.2202 10.3501H5.7702C5.1702 10.3501 4.6002 10.5001 4.0802 10.7901C3.6902 11.0001 3.3402 11.2901 3.0502 11.6501C2.4802 12.3801 2.2102 13.2801 2.3002 14.1801L2.6702 18.8501C2.8002 20.2601 2.9702 22.0001 6.1402 22.0001H17.8602C21.0302 22.0001 21.1902 20.2601 21.3302 18.8401L21.7002 14.1901C21.7902 13.3501 21.5702 12.5101 21.0602 11.8201ZM14.3902 17.3401H9.6002C9.2102 17.3401 8.9002 17.0201 8.9002 16.6401C8.9002 16.2601 9.2102 15.9401 9.6002 15.9401H14.3902C14.7802 15.9401 15.0902 16.2601 15.0902 16.6401C15.0902 17.0301 14.7802 17.3401 14.3902 17.3401Z" fill="currentColor"/>
+                                                <path opacity="0.4" d="M3.37988 11.31C3.59988 11.11 3.81988 10.93 4.07988 10.79C4.58988 10.5 5.16988 10.35 5.76988 10.35H18.2299C18.8299 10.35 19.3999 10.5 19.9199 10.79C20.1799 10.93 20.4099 11.11 20.6199 11.32V10.79V9.82C20.6199 6.25 19.5299 5.16 15.9599 5.16H13.5799C13.1399 5.16 13.1299 5.15 12.8699 4.81L11.6699 3.2C11.0999 2.46 10.6499 2 9.21988 2H8.03988C4.46988 2 3.37988 3.09 3.37988 6.66V10.8V11.31Z" fill="currentColor"/>
+                                            </svg>
+                                            My Asset
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./order-history.html"> 
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.4" d="M6.73049 19.7C7.55049 18.82 8.80049 18.89 9.52049 19.85L10.5305 21.2C11.3405 22.27 12.6505 22.27 13.4605 21.2L14.4705 19.85C15.1905 18.89 16.4405 18.82 17.2605 19.7C19.0405 21.6 20.4905 20.97 20.4905 18.31V7.04C20.5005 3.01 19.5605 2 15.7805 2H8.22049C4.44049 2 3.50049 3.01 3.50049 7.04V18.3C3.50049 20.97 4.96049 21.59 6.73049 19.7Z" fill="currentColor"></path>
+                                                <path d="M16.2305 11.75H10.7305C10.3205 11.75 9.98047 11.41 9.98047 11C9.98047 10.59 10.3205 10.25 10.7305 10.25H16.2305C16.6405 10.25 16.9805 10.59 16.9805 11C16.9805 11.41 16.6405 11.75 16.2305 11.75Z" fill="currentColor"></path>
+                                                <path d="M16.2305 7.75H10.7305C10.3205 7.75 9.98047 7.41 9.98047 7C9.98047 6.59 10.3205 6.25 10.7305 6.25H16.2305C16.6405 6.25 16.9805 6.59 16.9805 7C16.9805 7.41 16.6405 7.75 16.2305 7.75Z" fill="currentColor"></path>
+                                                <path d="M7.78027 8C7.23027 8 6.78027 7.55 6.78027 7C6.78027 6.45 7.23027 6 7.78027 6C8.33027 6 8.78027 6.45 8.78027 7C8.78027 7.55 8.33027 8 7.78027 8Z" fill="currentColor"></path>
+                                                <path d="M7.78027 12C7.23027 12 6.78027 11.55 6.78027 11C6.78027 10.45 7.23027 10 7.78027 10C8.33027 10 8.78027 10.45 8.78027 11C8.78027 11.55 8.33027 12 7.78027 12Z" fill="currentColor"></path>
+                                            </svg>
+                                            Order History
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="./exchange.html"> 
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15 15.5C15 19.09 12.09 22 8.5 22C4.91 22 2 19.09 2 15.5C2 11.91 4.91 9 8.5 9C8.67 9 8.84999 9.01 9.01999 9.02C12.19 9.27 14.73 11.81 14.98 14.98C14.99 15.15 15 15.33 15 15.5Z" fill="currentColor"></path>
+                                                <path opacity="0.4" d="M22 8.5C22 12.09 19.09 15 15.5 15C15.33 15 15.15 14.99 14.98 14.98C14.73 11.81 12.19 9.27 9.01999 9.02C9.00999 8.85 9 8.67 9 8.5C9 4.91 11.91 2 15.5 2C19.09 2 22 4.91 22 8.5Z" fill="currentColor"></path>
+                                                <path d="M5.59 2H3C2.45 2 2 2.45 2 3V5.59C2 6.48 3.07999 6.93 3.70999 6.3L6.29999 3.71001C6.91999 3.08001 6.48 2 5.59 2Z" fill="currentColor"></path>
+                                                <path d="M18.41 22H21C21.55 22 22 21.55 22 21V18.41C22 17.52 20.92 17.07 20.29 17.7L17.7 20.29C17.08 20.92 17.52 22 18.41 22Z" fill="currentColor"></path>
+                                            </svg>
+                                            Exchange
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Call to Action -->
+                            <span class="d-grid">
+                                <a class="btn btn-editor btn-primary" href="#!" data-bs-toggle="modal" data-bs-target="#buyCrypto">Add Funds</a>
+                            </span>
+                            <!-- Carousel Slider -->
+                            <div id="RewardCarousel" class="carousel slide card-bs mt-4" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#RewardCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label=""></button>
+                                    <button type="button" data-bs-target="#RewardCarousel" data-bs-slide-to="1" aria-label=""></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="col-12 p-3 reward-bg2 pb-5">
+                                            <h4 class="fw-medium text-white mb-1">Invite Friends for Rewards</h4>
+                                            <p class="text-white mb-3">Invite friends and get 20% commissions.</p>
+                                            <a class="btn btn-editor btn-info mt-2" href="#!" data-bs-toggle="modal" data-bs-target="#RewardCrypto">Invite friends</a>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col-12 p-3 reward-bg3 pb-5">
+                                            <h4 class="fw-medium text-white text-white mb-1">Crypt Affiliate Programs</h4>
+                                            <p class="text-white mb-3">Apply and earn up to 60% commission!</p>
+                                            <a class="btn btn-editor btn-success mt-2" href="#!" data-bs-toggle="modal" data-bs-target="#RewardCrypto">Apply now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero -->
+            <div class="container">
+                <div class="row pb-2 pb-sm-5 text-center">
+                    <div class="mt-5 pt-5 pb-5">
+                        <div class="crypt-grayscale-100 d-inline-block badge bg-success bg-opacity-25 fs-6 fw-normal mt-5 mb-4">
+                            Join Us, Start Trading & Prove Your Skills 🤟
+                        </div>
+                        <h1 class="mt-4 fw-bold crypt-grayscale-100"> Revolutionizing future steps <br>in <span class="gd-text">crypto</span> and <span class="gd-text">fintech</span></h1>
+                        <p class="crypt-grayscale-400 mt-2 mb-3">Unleash Crypto Freedom: Limitless, Trustworthy, and Sign-Up Free</p>
+                        <div class="d-sm-flex justify-content-center gap-2 pt-4">
+                            <button class="custom-btn btn-11" onClick="window.location.assign('./dashboard.html')"><span>Start Trading</span>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 7L13.5 15.5L8.5 10.5L2 17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M16 7H22V13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="btn btn-dark btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Connect Wallet</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex">
+                    <img src="../static/images/slider/hero-12.png" alt="" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Supported Networks -->
+    <section class="container animation-element mt-5">
+        <div class="row mt-5 pt-4">
+            <div class="text-center">
+                <h2>Supported networks</h2>
+                <p class="card-text crypt-grayscale-500 mt-3">
+                    Choose your favourite network and start earning rewards
+                </p>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="row mt-5 pt-2">
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="card bg-1 d-sm-flex text-center animation-element p-4">
+                    <div class="flex mb-2">
+                        <img class="" src="../static/images/coin/eth.svg" alt="" width="80">
+                        <h4 class="fw-bold text-dark mt-4 mb-2">Ethereum</h4>
+                        <p class="text-dark text-opacity-75">TVL : $537M</p>
+                        <a class="btn btn-editor btn-dark mt-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake now</a>
+                    </div>
+                    <button class="link-secondary underline crypt-grayscale-500 fw-medium text-sm" type="button">Learn more</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="card bg-4 d-sm-flex text-center animation-element p-4">
+                    <div class="flex mb-2">
+                        <img class="" src="../static/images/coin/bnb.svg" alt="" width="80">
+                        <h4 class="fw-bold text-dark mt-4 mb-2">BNB Chain</h4>
+                        <p class="text-dark text-opacity-75">TVL : $537M</p>
+                        <a class="btn btn-editor btn-dark mt-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake now</a>
+                    </div>
+                    <button class="link-secondary underline crypt-grayscale-500 fw-medium text-sm" type="button">Learn more</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="card bg-3 d-sm-flex text-center animation-element p-4">
+                    <div class="flex mb-2">
+                        <img class="" src="../static/images/coin/HNT.svg" alt="" width="80">
+                        <h4 class="fw-bold text-dark mt-4 mb-2">HNT</h4>
+                        <p class="text-dark text-opacity-75">TVL : $537M</p>
+                        <a class="btn btn-editor btn-dark mt-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake now</a>
+                    </div>
+                    <button class="link-secondary underline crypt-grayscale-500 fw-medium text-sm" type="button">Learn more</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-4">
+                <div class="card bg-2 d-sm-flex text-center animation-element p-4">
+                    <div class="flex mb-2">
+                        <img class="" src="../static/images/coin/avax.svg" alt="" width="80">
+                        <h4 class="fw-bold text-dark mt-4 mb-2">AVAX</h4>
+                        <p class="text-dark text-opacity-75">TVL : $537M</p>
+                        <a class="btn btn-editor btn-dark mt-3" href="#!" data-bs-toggle="modal" data-bs-target="#stakeCrypto">Stake now</a>
+                    </div>
+                    <button class="link-secondary underline crypt-grayscale-500 fw-medium text-sm" type="button">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Safe and Trusted -->
+    <section class="container animation-element mt-5">
+        <div class="row mt-5 pt-4">
+            <div class="text-center">
+                <h2>Your safe and trusted <span class="gd-text">crypto exchange</span></h2>
+                <p class="card-text crypt-grayscale-500 mt-3">
+                    All your tokens, DeFi positions, NFT collections, and transaction history across all major networks.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-5 pt-2">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+                <div class="card reward-bg d-sm-flex flex-sm-row gap-3 animation-element p-4 pb-5">
+                    <div class="in-view">
+                        <h3 class="text-white fw-medium mb-3">Faster trading, better assets</h3>
+                        <p class="col-md-7 text-white">
+                            The purpose of lorem ipsum is to create a natural looking block of text sentence, paragraph, page, etc.
+                        </p>
+                        <button class="btn btn-link text-link text-white underline fw-medium text-sm p-0" type="button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-4">
+                <div class="card reward-bg3 d-sm-flex flex-sm-row gap-3 animation-element p-4 pb-5">
+                    <div class="in-view">
+                        <h3 class="text-white fw-medium mb-3">Crypt earn</h3>
+                        <p class="col-md-7 text-white">
+                            The purpose of lorem ipsum is to create a natural looking block of text sentence, paragraph, page, etc.
+                        </p>
+                        <button class="btn btn-link text-link text-white underline fw-medium text-sm p-0" type="button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mb-3">
+                <div class="card p-4 bg-5 animation-element">
+                    <div class="card-body in-view">
+                        <h2 class="gd-text mb-2">Trade Anytime, Anywhere</h2>
+                        <h5 class="text-white text-opacity-75 mt-3">Easily embed the widget on your website or mobile app with just a few clicks.</h5>
+                        <a class="btn btn-editor btn-info mt-3" href="exchange.html" role="button">Start Copy Trading</a>
+                        <div class="pt-2">
+                            <div class="attributes">
+                                <!-- Content, Design, Speaking, Creative, Engineering  -->
+                                <div class="attribute p-2">
+                                    <img class="" alt="" style="width:44px;" src="../static/images/coin/tron.svg">
+                                    TRON
+                                </div>
+                                <div class="attribute">
+                                    <img class="" alt="" style="width:44px;" src="../static/images/coin/bnb.svg">
+                                    Binance
+                                </div>
+                                <div class="attribute">
+                                    <img class="" alt="" style="width:44px;" src="../static/images/coin/sol.svg">
+                                    Solana
+                                </div>
+                                <div class="attribute">
+                                    <img class="" alt="" style="width:44px;" src="../static/images/coin/pepe.svg">
+                                    Pepe
+                                </div>
+                                <div class="attribute">
+                                    <img class="" alt="" style="width:44px;" src="../static/images/coin/link.svg">
+                                    Chainlink
+                                </div>
+                            </div>
+                        </div>
+                        <img class="" alt="" style="width:100%;" src="../static/images/slider/bg-5.png">
+                        <div class="crypt-scroll">
+                            <div class="crypt-scrolling">
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/avax.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/eth.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/link.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/sol.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/near.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/mnt.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/bnb.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/kas.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/apex.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/arb.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/wld.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/tron.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/sui.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/op.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/pepe.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/stx.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/btc.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/dot.svg"></div>
+                                <div><img alt="" style="width:60px;" src="../static/images/coin/ada.svg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card px-4 pb-0 gd-bg align-content-between animation-element h-100">
+                    <h4 class="card-title mt-3 mb-2">Faster Trading, Better Assets</h4>
+                    <p class="card-text pb-3">The purpose of lorem ipsum is to create a natural looking block of text sentence.</p>
+                    <div class="crypt-scroll mt-2">
+                        <div class="crypt-scrolling scroll-right">
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/metamask.svg">Metamask</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/coinbase.svg">Coinbase</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/phantom.svg">Phantom</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/rainbow.svg">Rainbow</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/ibw.svg">Install Bitget Wallet</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/walletconnect.svg">WalletConnect</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/passkeys.svg">Passkeys</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/trustwallet.svg">Trustwallet</div>
+                            <div class="card-mordern wallet-card"><img class="me-2" alt="" style="width:32px;" src="../static/images/icon/bitkeep.svg">BitKeep</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <img class="bottom-0" src="../static/images/features/app.png" alt="" width="364">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- See your crypto -->
+    <section class="container animation-element mt-5">
+        <!-- Benefits -->
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-7 p-5">
+                <div class="text-left">
+                    <h2>See your crypto and collectibles in one place</h2>
+                    <p class="crypt-grayscale-400 mt-3">You can receive your payments in your digital wallet in crypto or 
+                        <br>in your bank account in fiat — it’s your choice.</p>
+                </div>
+                <div class="d-flex flex-row gap-2 align-items-center">
+                    <img class="grayscale-item" alt="" style="width:26px;" src="../static/images/icon/check-fill.svg">
+                    <h6 class="lh-lg">80% reward for LPs</h6>
+                </div>
+                <div class="d-flex flex-row gap-2 align-items-center">
+                    <img class="grayscale-item" alt="" style="width:26px;" src="../static/images/icon/check-fill.svg">
+                    <h6 class="lh-lg">Flexible trading & low slippage</h6>
+                </div>
+                <div class="d-flex flex-row gap-2 align-items-center">
+                    <img class="grayscale-item" alt="" style="width:26px;" src="../static/images/icon/check-fill.svg">
+                    <h6 class="lh-lg">Limit orders with 0% fee</h6>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-2">One account. Over <span class="badge text-bg-warning text-dark fs-6 fw-bold">300+</span> partners.</h5>
+                        <p class="card-text">The purpose of lorem ipsum is to create a natural looking block of text sentence, paragraph, page, etc.</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card gd-bg">
+                            <h3 class="crypt-red-500">50+</h3>
+                            <p class="card-text">Cryptocurrencies</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card gd-bg">
+                            <h3 class="crypt-blue-500">$48.51B</h3>
+                            <p class="card-text">Total volume</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card gd-bg">
+                            <h3 class="crypt-cyan-500">923K+</h3>
+                            <p class="card-text">User accounts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-5">
+                <img  alt="" style="width:100%;" src="../static/images/slider/rewards.svg">
+            </div>
+        </div>
+        <!-- Trusted by industry leaders -->
+        <div class="row mt-3 animation-element">
+            <h5 class="gd-text text-center text-uppercase">Trusted by industry leaders</h5>
+            <div class="partner grayscale-item crypt-scroll in-view">
+                <div class="crypt-scrolling scroll-right">
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-3.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-2.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-4.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-9.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-10.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-5.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-3.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-2.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-4.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-9.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-10.svg"></div>
+                    <div><img alt="" style="width:200px;" src="../static/images/partner/logo-5.svg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Table -->
+    <section class="container animation-element mt-5 pt-4">
+        <div class="text-center">
+            <h2>Plans and <span class="gd-text">Pricing</span></h2>
+            <p class="card-text crypt-grayscale-500 mt-3">All your tokens, DeFi positions, NFT collections, and transaction 
+                <br>history across all major networks.
+            </p>
+        </div>
+        <div class="row mt-5">
+            <div class="d-flex flex-row justify-content-center">
+                <ul class="nav nav-pills gap-2 card-bs card-border p-1 anim" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active rounded-pill" id="pills-monthly-tab" data-bs-toggle="pill" data-bs-target="#pills-monthly" type="button" role="tab" aria-controls="pills-monthly" aria-selected="true">Monthly</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link rounded-pill" id="pills-annual-tab" data-bs-toggle="pill" data-bs-target="#pills-annual" type="button" role="tab" aria-controls="pills-annual" aria-selected="false">Annual <span class="badge bg-warning text-dark m-1">-35%</span></button>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content pt-5" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-monthly" role="tabpanel" aria-labelledby="pills-monthly-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Basic</h3> </li>
+                                <li> <p>For your hobby projects or personal use</p> </li>
+                                <li> <h1 class="mb-4">$39 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Pro</h3> </li>
+                                <li> <p>For individual creators and marketers</p> </li>
+                                <li> <h1 class="mb-4">$99 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Enterprise</h3> </li>
+                                <li> <p>Tailored plan for your team’s unique needs</p> </li>
+                                <li> <h1 class="mb-4">$489 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-annual" role="tabpanel" aria-labelledby="pills-annual-tab" tabindex="0">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Basic</h3> </li>
+                                <li> <p>For your hobby projects or personal use</p> </li>
+                                <li> <h1 class="mb-4">$12 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Pro</h3> </li>
+                                <li> <p>For individual creators and marketers</p> </li>
+                                <li> <h1 class="mb-4">$32 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <ul class="pricing-plan">
+                                <li> <h3>Enterprise</h3> </li>
+                                <li> <p>Tailored plan for your team’s unique needs</p> </li>
+                                <li> <h1 class="mb-4">$299 <small>/month (billed annually)</small></h1> </li>
+                                <li class="d-grid">
+                                    <button class="btn btn-dark">Start free trial</button>
+                                </li>
+                                <li class="mt-4">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 2 charts per tab<span class="tooltiptext">Research several charts per tab. Compare different markets, sync symbols, intervals, crosshairs, and drawings to create a streamlined workflow.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> 5 indicators per chart<span class="tooltiptext">More indicators, more trading possibilities. Analyze markets with every technical and fundamental indicator imaginable.</span></p>
+                                </li>
+                                <li class="mt-1">
+                                    <img class="me-2" alt="" src="../static/images/icon/checkmark.svg"><p class="crypt-tooltip"> No ads<span class="tooltiptext">Our upgraded plans allow you to go ad-free everywhere. Focus on markets without any distractions.</span></p>
+                                </li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Volume profile</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Custom Range Bars</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Multiple watchlists</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> Chart data export</li>
+                                <li><img class="me-2" alt="" src="../static/images/icon/checkmark.svg"> First priority support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feedback -->
+    <section class="container animation-element mt-5 pt-2">
+        <h2 class="text-center">Feedback from users</h2>
+        <div class="row mt-5">
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="testimonial">
+                    <img class="trustpilot-star" src="../static/images/icon/trustpilot-star.svg" alt="">
+                    <p class="fs-6 fw-bold mt-3">Lightspeed Support Reply!</p>
+                    <p class="fs-6">Very nice. Easy KYC, I bought btc, the actual commission they have is one of the most profitable, everything went quickly.</p>
+                    <div class="d-flex flex-row align-items-center gap-3">
+                        <h6 class="fw-bold crypt-grayscale-700">Michael R.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="testimonial">
+                    <img class="trustpilot-star" src="../static/images/icon/trustpilot-star.svg" alt="">
+                    <p class="fs-6 fw-bold mt-3">Professional & trustworthy</p>
+                    <p class="fs-6">We like how Onramper consistently matches our users with the best option for their needs. Transactions are smooth, and APM support.</p>
+                    <div class="d-flex flex-row align-items-center gap-3">
+                        <h6 class="fw-bold crypt-grayscale-700">Steven E.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+                <div class="testimonial">
+                    <img class="trustpilot-star" src="../static/images/icon/trustpilot-star.svg" alt="">
+                    <p class="fs-6 fw-bold mt-3">best support ever!!</p>
+                    <p class="fs-6">fastest and helpfull support ever, very friendly support replies at lightspeed solving like real pros broken selected value.</p>
+                    <div class="d-flex flex-row align-items-center gap-3">
+                        <h6 class="fw-bold crypt-grayscale-700">Paul Cartier</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="crypt-grayscale-500 text-center mt-3">Rated <span class="crypt-grayscale-100 meta">4.8 </span>out of 5 based on <a href="#" class="text-bg-danger">486 reviews</a> on
+            <a href="https://www.trustpilot.com/" target="_blank"><img class="ms-2 " src="../static/images/partner/logo-11.svg" style="width:122px;" alt=""></a>
+    </section>
+    <!-- Blog -->
+    <section class="container animation-element mt-4 mt-sm-5 pt-0 pt-sm-4">
+        <div class="text-center">
+            <h2>Stay Updated with Our Blog</h2>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12 col-md-4 mb-4">
+                <a href="blog-single.html" class="blog-card">
+                    <div class="thumb" style="background-image: url(../static/images/blog/blog-12.jpg);"></div>
+                    <div class="meta p-3">
+                        <span class="badge badge text-uppercase text-bg-success">Metaverse</span>
+                        <h5 class="title-link">FOMC holds rates steady, Bitcoin and Ethereum price decline</h5>
+                        <p class="crypt-grayscale-600">2 mins read / updated on Tue Dec 29 2024</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <a href="blog-single.html" class="blog-card">
+                    <div class="thumb" style="background-image: url(../static/images/blog/blog-13.jpg);"></div>
+                    <div class="meta p-3">
+                        <span class="badge badge text-uppercase text-bg-info">Ethereum</span>
+                        <h5 class="title-link">Restaking with ETHx | Boosted reward programs</h5>
+                        <p class="crypt-grayscale-600">4 mins read / updated on Fri Oct 15 2024</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <a href="blog-single.html" class="blog-card">
+                    <div class="thumb" style="background-image: url(../static/images/blog/blog-14.jpg);"></div>
+                    <div class="meta p-3">
+                        <span class="badge badge text-uppercase text-bg-warning">Trading</span>
+                        <h5 class="title-link">Wrapping tokens enables broader across the Web3 ecosystem</h5>
+                        <p class="crypt-grayscale-600">5 mins read / updated on Sat May 22 2024</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter -->
+    <section class="container animation-element mt-4 mt-sm-5 pt-0 pt-sm-4 pb-5 nl-bg">
+        <div class="row newsletter justify-content-center" id="contact">
+            <div class="d-flex flex-column text-center mb-4">
+                <h2 class="text-center text-uppercase mb-2" id="news">Join Our 💌 Newsletter!</h2>
+                <p class="text-center m-auto fs-6 crypt-grayscale-500 mt-2" >
+                    Get updates, insights, and reports on the latest industry trends.
+                </p>
+            </div>
+            <div class="newsletter-form newsletter text-center mt-4 z-0">
+                <p class="crypt-grayscale-400" id="distance">Don't be shy. You are <span id="distance_text">0</span> pixels away from hitting that button!</p>
+                <form>
+                    <input type="email" maxlength="50" id="exampleFormControlInput1" required placeholder="Enter your email address">
+                    <button id="element" class="btn btn-lg shiny-cta signup-btn">Subscribe</button>
+                </form>
+            </div>
+            <div class="d-flex flex-row justify-content-center align-items-center text-center gap-1 mt-3 mb-4">
+                <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z" fill="#339af0" fill-opacity="0.23"></path>
+                    <path d="M6.75 9L8.25 10.5L11.25 7.5" stroke="#339af0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                <h6 class="crypt-grayscale-500 mb-0">You are subscribing to all our networks <a class="text-info text-link" href="#!">Select networks</a></h6>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="container-fluid faq-bg pt-5 pb-0 mb-0 animation-element">
+        <div class="container">
+            <div class="row pt-4 mb-0 pb-5">
+                <div class="col-12 col-md-6 pe-5">
+                    <h2 class="fw-medium">Your crypto, Your rules</h2>
+                    <p class="crypt-grayscale-300 mb-5">Trade, deposit, and withdraw crypto on the move with our mobile app.</p>
+                    <div class="d-sm-flex justify-content-between align-items-center card-border animation-element p-4">
+                        <div class="in-view">
+                            <h4 class="fw-medium mb-3">Scan QR Code</h4>
+                            <div class="crypto-has-dropdown fw-medium crypt-grayscale-600 mt-3" role="button">
+                                <svg width="24" height="24" viewBox="0 0 1024 1024" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M213.344 170.656c-23.552 0-42.656 19.104-42.656 42.656v106.656a42.656 42.656 0 01-85.312 0V213.312a128 128 0 01128-128h106.656a42.656 42.656 0 010 85.312H213.376zM128 661.344c23.552 0 42.656 19.104 42.656 42.656v106.656c0 23.552 19.104 42.656 42.656 42.656h106.656a42.656 42.656 0 010 85.312H213.312a128 128 0 01-128-128V703.968c0-23.552 19.104-42.656 42.656-42.656zM938.656 704a42.656 42.656 0 00-85.312 0v106.656c0 23.552-19.104 42.656-42.656 42.656H704.032a42.656 42.656 0 000 85.312h106.656a128 128 0 00128-128V703.968zM661.344 128c0-23.552 19.104-42.656 42.656-42.656h106.656a128 128 0 01128 128V320a42.656 42.656 0 01-85.312 0V213.344c0-23.552-19.104-42.656-42.656-42.656H704.032a42.656 42.656 0 01-42.656-42.656zm-448 341.344a42.656 42.656 0 000 85.312h597.344a42.656 42.656 0 000-85.312H213.344z"></path>
+                                </svg>
+                                Scan the QR code to log in or Open Crypt app.
+                            </div>
+                            <div class="mt-3">
+                                <p class="crypt-grayscale-500">Don't have an account? <a href="./signup.html" class="link-primary fw-bold">Sign up</a></p>
+                            </div>
+                        </div>
+                        <div class="d-inline-block card text-bg-light in-view">
+                            <img alt="" width="140" src="../static/images/features/qr.svg">
+                        </div>
+                    </div>
+                    <p class="crypt-grayscale-300 mt-4">Download now</p>
+                    <div class="d-sm-flex gap-3 mt-2 mb-2 text-center">
+                        <a href="#!" class="d-flex btn btn-outline-secondary text-light card-border justify-content-between align-items-center py-2 gap-4 mb-2" data-bs-toggle="button">App Store
+                            <img alt="" width="32" src="../static/images/icon/app-store.svg">
+                        </a>
+                        <a href="#!" class="d-flex btn btn-outline-secondary text-light card-border justify-content-between align-items-center py-2 gap-4 mb-2" data-bs-toggle="button">Google Play
+                            <img alt="" width="32" src="../static/images/icon/google-play.svg">
+                        </a>
+                        <a href="#!" class="d-flex btn btn-outline-secondary text-light card-border justify-content-between align-items-center py-2 gap-4 mb-2" data-bs-toggle="button">Android APK
+                            <img alt="" width="32" src="../static/images/icon/andorid.svg">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card p-4">
+                        <div class="d-sm-flex justify-content-between align-items-center mb-3">
+                            <h3 class="fw-medium">FAQ</h3>
+                            <p class="fw-medium crypt-grayscale-300">Didn't find the answer? <a href="#" class="link-info">Ask a question</a></p>
+                        </div>
+                        <div class="accordion in-view">
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingOne">
+                                    <button class="accordion-button fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What are the benefits of staking?
+                                    </button>
+                                </div>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The passage experienced today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What is a blockchain API?
+                                    </button>
+                                </div>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingThree">
+                                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How do I get blockchain API?
+                                    </button>
+                                </div>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The passage experienced a surge in popularity during the 1980s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web on templates, websites, and stock designs.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="headingFour">
+                                    <button class="accordion-button fs-5 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        How do nodes work?
+                                    </button>
+                                </div>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The placeholder text, beginning with the line “Lorem ipsum dolor sit amet, consectetur adipiscing elit”, looks like Latin because in its youth, centuries ago, it was Latin.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Futures Grid -->
+    <div class="modal fade" id="createFuturesGrid" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Create Futures Grid</h5>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Create Form -->
+                    <div class="card-bs p-2 bg-5">
+                        <div class="input-group mt-2">
+                            <label class="form-label fw-bold crypt-grayscale-300">1. Price Range 
+                                <span class="badge text-warning bg-warning bg-gradient bg-opacity-25">Trailing</span>
+                            </label>
+                        </div>
+                        <div class="d-flex flex-row gap-2 align-items-center">
+                            <div class="input-group">
+                                <input class="form-control text-sm" type="text" placeholder="Lower">
+                            </div>
+                            <div class="mt-3">
+                                <p class="crypt-grayscale-600">-</p>
+                            </div>
+                            <div class="input-group">
+                                <input class="form-control text-sm" type="text" placeholder="Upper">
+                            </div>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label class="form-label fw-bold crypt-grayscale-300">2. Number of Grids</label>
+                        </div>
+                        <div class="input-group d-flex">
+                            <input type="email" class="form-control text-sm" placeholder="2-169">
+                            <div class="input-group-append input-group-text p-1">
+                                <select class="form-select text-sm crypt-grayscale-400">
+                                    <option selected>Arithmetic</option>
+                                    <option value="1">Geometric</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="form-label crypt-grayscale-600 mt-1">Profit/grid(fees deducted): --</label>
+                        <div class="input-group mt-2">
+                            <label class="form-label fw-bold crypt-grayscale-300">3. Investment</label>
+                            <label class="form-label ms-auto crypt-grayscale-600">Avbl <span class="text-primary">0.00 USDT</span></label>
+                        </div>
+                        <div class="input-group d-flex">
+                            <input type="email" class="form-control text-sm" placeholder="USDT">
+                            <div class="input-group-append input-group-text p-1">
+                                <select class="form-select text-sm crypt-grayscale-400">
+                                    <option selected>5x</option>
+                                    <option value="1">1x</option>
+                                    <option value="1">2x</option>
+                                    <option value="1">3x</option>
+                                    <option value="1">4x</option>
+                                    <option value="1">5x</option>
+                                    <option value="1">6x</option>
+                                    <option value="1">7x</option>
+                                    <option value="1">8x</option>
+                                    <option value="1">9x</option>
+                                    <option value="1">10x</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-sm">
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Qty/Order</p>
+                            <p class="crypt-grayscale-500">0 USDT</p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Total Investment</p>
+                            <p class="crypt-grayscale-500">0.00 USDT</p>
+                        </div>
+                    </div>
+                    <div class="d-grid mt-5 mb-3">
+                        <a class="btn btn-warning" href="#!" role="button">Create (Neutral)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Buy/Sell Modal -->
+    <div class="modal fade" id="buyCrypto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Fast Trade</h5>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Tab -->
+                    <div class="tab-content table-responsive justify-content-between mb-4 p-0">
+                        <div class="d-flex flex-row nav nav-pills nav-justified card-bs-tabs p-1">
+                            <button class="nav-link active fs-6" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy-tab-pane" type="button" aria-controls="buy-tab-pane">Buy</button>
+                            <button class="nav-link fs-6" id="sell-tab" data-bs-toggle="tab" data-bs-target="#sell-tab-pane" type="button" aria-controls="sell-tab-pane">Sell</button>
+                        </div>
+                        <!--Buy Tabs -->
+                        <div class="tab-pane fade show active pt-4" id="buy-tab-pane" role="tabpanel" aria-labelledby="buy-tab" tabindex="0">
+                            <div class="input-group mb-3 P-1">
+                                <div class="input-group-prepend input-group-text">Spend ≈</div>
+                                <input class="form-control placeholder-text" type="text" placeholder="Enter amount">
+                                <div class="input-group-append input-group-text p-1">
+                                    <select class="form-select text-sm crypt-grayscale-500">
+                                        <option selected>USD</option>
+                                        <option value="1">AED</option>
+                                        <option value="2">AMD</option>
+                                        <option value="3">AUD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group mb-3 p-1">
+                                <div class="input-group-prepend input-group-text">Receive</div>
+                                <input class="form-control placeholder-text" type="text" placeholder="0">
+                                <div class="input-group-append input-group-text p-1">
+                                    <select class="form-select text-sm crypt-grayscale-500">
+                                        <option selected>USDT</option>
+                                        <option value="1">BTC</option>
+                                        <option value="2">BNB</option>
+                                        <option value="3">ETH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-sm card-border p-2">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500">Subtotal:</p>
+                                    <p class="crypt-grayscale-600">0.00 USDT</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500">Trade Fee: <span class="crypt-grayscale-500">(0.1%)</span></p>
+                                    <p class="crypt-grayscale-600">0.00 USDT</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500">Gas Fee:</p>
+                                    <p class="crypt-blue">Free</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500 mb-0">Total:</p>
+                                    <p class="crypt-grayscale-600 mb-0">0.00 USDT</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-4 text-sm">
+                                <div class="d-flex flex-row">
+                                    <label class="form-label text-light">Payment Method</label>
+                                </div>
+                                <a class="btn btn-editor btn-outline-primary d-flex flex-row align-items-center justify-content-between card-border p-2" href="#!" data-bs-toggle="" data-bs-target="">
+                                    <div class="d-flex flex-row align-items-center crypt-grayscale-300 gap-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 15C4.06 15 3.19 15.33 2.5 15.88C1.58 16.61 1 17.74 1 19C1 19.75 1.21 20.46 1.58 21.06C2.27 22.22 3.54 23 5 23C6.01 23 6.93001 22.63 7.63 22C7.94 21.74 8.21 21.42 8.42 21.06C8.79 20.46 9 19.75 9 19C9 16.79 7.21 15 5 15ZM7.07001 18.57L4.94 20.54C4.8 20.67 4.60999 20.74 4.42999 20.74C4.23999 20.74 4.04999 20.67 3.89999 20.52L2.91 19.53C2.62 19.24 2.62 18.76 2.91 18.47C3.2 18.18 3.68 18.18 3.97 18.47L4.45 18.95L6.05 17.47C6.35 17.19 6.83 17.21 7.11 17.51C7.39 17.81 7.37001 18.29 7.07001 18.57Z" fill="currentColor"/>
+                                            <path opacity="0.4" d="M19.48 12.95H21.5V11.51C21.5 9.44001 19.81 7.75 17.74 7.75H6.25999C4.18999 7.75 2.5 9.44001 2.5 11.51V15.88C3.19 15.33 4.06 15 5 15C7.21 15 9 16.79 9 19C9 19.75 8.79 20.46 8.42 21.06C8.21 21.42 7.94 21.74 7.63 22H17.74C19.81 22 21.5 20.31 21.5 18.24V17.05H19.6C18.52 17.05 17.53 16.26 17.44 15.18C17.38 14.55 17.62 13.96 18.04 13.55C18.41 13.17 18.92 12.95 19.48 12.95Z" fill="currentColor"/>
+                                            <path d="M14.85 3.95012V7.75011H6.25999C4.18999 7.75011 2.5 9.44012 2.5 11.5101V7.84014C2.5 6.65014 3.23 5.59009 4.34 5.17009L12.28 2.17009C13.52 1.71009 14.85 2.62012 14.85 3.95012Z" fill="currentColor"/>
+                                            <path d="M22.5598 13.9702V16.0302C22.5598 16.5802 22.1198 17.0302 21.5598 17.0502H19.5998C18.5198 17.0502 17.5298 16.2602 17.4398 15.1802C17.3798 14.5502 17.6198 13.9602 18.0398 13.5502C18.4098 13.1702 18.9198 12.9502 19.4798 12.9502H21.5598C22.1198 12.9702 22.5598 13.4202 22.5598 13.9702Z" fill="currentColor"/>
+                                            <path d="M14 12.75H7C6.59 12.75 6.25 12.41 6.25 12C6.25 11.59 6.59 11.25 7 11.25H14C14.41 11.25 14.75 11.59 14.75 12C14.75 12.41 14.41 12.75 14 12.75Z" fill="currentColor"/>
+                                        </svg>
+                                        Pay with new card
+                                        <svg width="50" height="17" viewBox="0 0 50 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.9289 16.0671L19.5488 0.834256H23.6709L19.0508 16.0671H14.9289ZM13.0862 0.838415L9.37817 7.29564C8.43424 8.98682 7.88249 9.84103 7.61717 10.9098H7.56072C7.62638 9.55491 7.43741 7.89165 7.41959 6.95158L7.01016 0.838415H0.0713081L0 1.24814C1.7827 1.24814 2.83984 2.14365 3.13071 3.97537L4.48319 16.0671H8.75364L17.3884 0.838415H13.0862ZM45.1423 16.0671L45.0285 13.8016L39.8813 13.7974L38.8286 16.0668H34.3535L42.468 0.863076H47.9611L49.3353 16.0668H45.1423V16.0671ZM44.6696 7.08172C44.6239 5.95594 44.5856 4.42787 44.6622 3.50325H44.6013C44.3505 4.25941 43.2729 6.53027 42.799 7.64713L41.2653 10.9861H44.8794L44.6696 7.08172ZM27.9984 16.5C25.0882 16.5 23.1569 15.5769 21.778 14.7538L23.7417 11.7551C24.9794 12.4473 25.9513 13.2463 28.1874 13.2463C28.9064 13.2463 29.5993 13.0594 29.9927 12.3781C30.5661 11.3872 29.8605 10.8542 28.2501 9.94265L27.455 9.42567C25.068 7.7945 24.0355 6.24533 25.1592 3.54098C25.8782 1.81117 27.7747 0.5 30.9034 0.5C33.061 0.5 35.0838 1.43324 36.2624 2.34509L34.0049 4.99269C32.8548 4.06242 31.9014 3.59179 30.8104 3.59179C29.9404 3.59179 29.2796 3.92723 29.0514 4.37974C28.6221 5.23039 29.1902 5.81036 30.4446 6.5891L31.39 7.19046C34.2881 9.01832 34.9786 10.935 34.2522 12.7269C33.0031 15.8113 30.5572 16.5 27.9984 16.5Z" fill="#1434CB"/>
+                                        </svg>
+                                        <svg width="30" height="19" viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18.8324 16.5755H10.9585V2.42493H18.8325L18.8324 16.5755Z" fill="#FF5F00" />
+                                            <path d="M11.4577 9.49945C11.4577 6.62901 12.8017 4.07201 14.8946 2.42417C13.3104 1.175 11.3509 0.497029 9.33348 0.50001C4.36375 0.50001 0.335205 4.52914 0.335205 9.49945C0.335205 14.4698 4.36375 18.4989 9.33348 18.4989C11.351 18.5019 13.3105 17.8239 14.8947 16.5747C12.802 14.9272 11.4577 12.37 11.4577 9.49945Z"
+                                                fill="#EB001B" />
+                                            <path d="M29.4553 9.50067C29.4553 14.471 25.4268 18.5001 20.457 18.5001C18.4393 18.5031 16.4796 17.8251 14.895 16.576C16.9885 14.9281 18.3325 12.3713 18.3325 9.50067C18.3325 6.63009 16.9885 4.07323 14.895 2.42539C16.4795 1.17625 18.4392 0.498302 20.4569 0.50123C25.4266 0.50123 29.4552 4.53036 29.4552 9.50067"
+                                                fill="#F79E1B" />
+                                        </svg>
+                                    </div>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between text-sm">
+                                <p class="crypt-grayscale-500">Reference Price</p>
+                                <p class="crypt-grayscale-300">1 USDT ≈ 1.05 USD</p>
+                            </div>
+                            <div class="d-grid">
+                                <a class="btn btn-up" href="./login.html" role="button">Buy USDT</a>
+                            </div>
+                        </div>
+                        <!--Sell Tabs -->
+                        <div class="tab-pane fade pt-4" id="sell-tab-pane" role="tabpanel" aria-labelledby="sell-tab" tabindex="0">
+                            <div class="d-flex flex-row align-items-center justify-content-between px-1">
+                                <label class="form-label text-sm text-light">I Want to Sell</label>
+                                <label class="form-label text-sm crypt-grayscale-600">Funding Balance: 
+                                    <span class="crypt-grayscale-300">0.00 USDT</span>
+                                </label>
+                            </div>
+                            <div class="input-group d-flex p-1">
+                                <input type="email" class="form-control text-sm" placeholder="Enter amount">
+                                <div class="input-group-append input-group-text p-1">
+                                    <select class="form-select text-sm crypt-grayscale-500">
+                                        <option selected>USDT</option>
+                                        <option value="1">BTC</option>
+                                        <option value="2">BNB</option>
+                                        <option value="3">ETH</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row mt-4">
+                                <label class="form-label text-sm text-light px-1">I Will Receive</label>
+                            </div>
+                            <div class="input-group d-flex p-1">
+                                <input type="email" class="form-control text-sm" placeholder="0">
+                                <div class="input-group-append input-group-text p-1">
+                                    <select class="form-select text-sm crypt-grayscale-500">
+                                        <option selected>USD</option>
+                                        <option value="1">AMD</option>
+                                        <option value="2">AFN</option>
+                                        <option value="3">AUD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm card-border p-2">
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500">Subtotal:</p>
+                                    <p class="crypt-grayscale-600">0.00 USDT</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500">Gas Fee:</p>
+                                    <p class="crypt-blue">Free</p>
+                                </div>
+                                <div class="d-flex flex-row justify-content-between">
+                                    <p class="crypt-grayscale-500 mb-0">Total:</p>
+                                    <p class="crypt-grayscale-600 mb-0">0.00 USDT</p>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-4 text-sm">
+                                <div class="d-flex flex-row">
+                                    <label class="form-label text-light">Receive Method</label>
+                                </div>
+                                <a class="btn btn-editor btn-secondary d-flex flex-row align-items-center justify-content-between card-border p-2" href="#!" data-bs-toggle="" data-bs-target="">
+                                    <div class="crypt-grayscale-300">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 15C4.06 15 3.19 15.33 2.5 15.88C1.58 16.61 1 17.74 1 19C1 19.75 1.21 20.46 1.58 21.06C2.27 22.22 3.54 23 5 23C6.01 23 6.93001 22.63 7.63 22C7.94 21.74 8.21 21.42 8.42 21.06C8.79 20.46 9 19.75 9 19C9 16.79 7.21 15 5 15ZM7.07001 18.57L4.94 20.54C4.8 20.67 4.60999 20.74 4.42999 20.74C4.23999 20.74 4.04999 20.67 3.89999 20.52L2.91 19.53C2.62 19.24 2.62 18.76 2.91 18.47C3.2 18.18 3.68 18.18 3.97 18.47L4.45 18.95L6.05 17.47C6.35 17.19 6.83 17.21 7.11 17.51C7.39 17.81 7.37001 18.29 7.07001 18.57Z" fill="currentColor"/>
+                                            <path opacity="0.4" d="M19.48 12.95H21.5V11.51C21.5 9.44001 19.81 7.75 17.74 7.75H6.25999C4.18999 7.75 2.5 9.44001 2.5 11.51V15.88C3.19 15.33 4.06 15 5 15C7.21 15 9 16.79 9 19C9 19.75 8.79 20.46 8.42 21.06C8.21 21.42 7.94 21.74 7.63 22H17.74C19.81 22 21.5 20.31 21.5 18.24V17.05H19.6C18.52 17.05 17.53 16.26 17.44 15.18C17.38 14.55 17.62 13.96 18.04 13.55C18.41 13.17 18.92 12.95 19.48 12.95Z" fill="currentColor"/>
+                                            <path d="M14.85 3.95012V7.75011H6.25999C4.18999 7.75011 2.5 9.44012 2.5 11.5101V7.84014C2.5 6.65014 3.23 5.59009 4.34 5.17009L12.28 2.17009C13.52 1.71009 14.85 2.62012 14.85 3.95012Z" fill="currentColor"/>
+                                            <path d="M22.5598 13.9702V16.0302C22.5598 16.5802 22.1198 17.0302 21.5598 17.0502H19.5998C18.5198 17.0502 17.5298 16.2602 17.4398 15.1802C17.3798 14.5502 17.6198 13.9602 18.0398 13.5502C18.4098 13.1702 18.9198 12.9502 19.4798 12.9502H21.5598C22.1198 12.9702 22.5598 13.4202 22.5598 13.9702Z" fill="currentColor"/>
+                                            <path d="M14 12.75H7C6.59 12.75 6.25 12.41 6.25 12C6.25 11.59 6.59 11.25 7 11.25H14C14.41 11.25 14.75 11.59 14.75 12C14.75 12.41 14.41 12.75 14 12.75Z" fill="currentColor"/>
+                                        </svg>
+                                        Enter Amount and select payment
+                                    </div>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="d-grid">
+                                <a class="btn btn-down" href="./login.html" role="button">Sell USDT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas Notifications -->
+    <div class="offcanvas offcanvas-end" tabindex="0" id="offcanvasNotify">
+        <div class="offcanvas-header card-line">
+            <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Notifications <span class="crypt-grayscale-500 text-sm mb-0">3</span></h5>
+            <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <h6 class="crypt-grayscale-400">Today</h6>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p class="crypt-grayscale-600 text-sm mb-0">30 min ago</p>
+                <a class="text-dark fs-6 fw-bold text-link" href="#!">🔐 Account Login</a>
+                <p class="mt-2"><strong>Hollo John! </strong>You have logged in your account from Windows Chrome 130.</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <p class="crypt-grayscale-600 text-sm mb-0">1 hours ago</p>
+                <a class="text-dark fs-6 fw-bold text-link" href="#!">📢 Announcement</a>
+                <p class="mt-2">Notice on New Trading Pairs and Trading Bots Services.</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <p class="crypt-grayscale-600 text-sm mb-0">2 hours ago</p>
+                <a class="text-dark fs-6 fw-bold text-link" href="#!">🔖 Coupon Expire Soon</a>
+                <p class="mt-2"><strong>Hollo John!</strong> Your Margin Interest-Free Coupon will expire in 9 hour(s).</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <!-- Transfer Modal -->
+    <div class="modal fade" id="transferCrypto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Transfer</h5>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Transfer Form -->
+                    <div class="d-flex flex-column">
+                        <label class="form-label text-sm text-light">Internal transfers are free on Crypt.</label>
+                        <div class="card-bs p-2 bg-5">
+                            <div class="input-group">
+                                <label class="input-group-text">From</label>
+                                <select class="form-select text-sm crypt-grayscale-300">
+                                    <option disabled>Options</option>
+                                    <option selected>Fiat and Spot</option>
+                                    <option value="1">Funding</option>
+                                    <option value="2">Isolated Margin</option>
+                                    <option value="3">COIN-M Futures</option>
+                                </select>
+                            </div>
+                            <div class="input-group justify-content-between p-2">
+                                <img alt="" style="width:20px;" src="../static/images/icon/arrow-down.svg">
+                                <a href="#!">
+                                  <img alt="" style="width:24px;" src="../static/images/icon/switch.svg">
+                                </a>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-group-text">To</label>
+                                <select class="form-select text-sm crypt-grayscale-300">
+                                    <option disabled>Options</option>
+                                    <option selected>Cross Margin</option>
+                                    <option value="1">USDⓈ-M Futures</option>
+                                    <option value="2">Fiat and Spot</option>
+                                    <option value="3">COIN-M Futures</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="form-label text-sm text-light mt-4">Coin</label>
+                        <div class="input-group mb-3">
+                            <select class="form-select crypt-grayscale-300">
+                                <option selected>1INCH</option>
+                                <option value="1">USDT</option>
+                                <option value="2">AAVE</option>
+                                <option value="3">ACE</option>
+                                <option value="4">ALGO</option>
+                                <option value="5">APE</option>
+                                <option value="6">CELO</option>
+                            </select>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend input-group-text">Amount ≈</div>
+                            <input class="form-control placeholder-text" type="text" placeholder="Enter the transfer amount">
+                            <a href="#" class="input-group-append input-group-text text-warning">MAX</a>
+                        </div>
+                        <div class="mt-2 text-sm">
+                            <div class="d-flex flex-row justify-content-between">
+                                <p class="crypt-grayscale-500">Max Transferrable:</p>
+                                <p class="crypt-grayscale-600">0.00000000 USDT</p>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between">
+                                <p class="crypt-grayscale-500">Avaliable:</p>
+                                <p class="crypt-grayscale-600">0.00000000 USDT</p>
+                            </div>
+                        </div>
+                        <div class="d-grid mt-5 mb-3">
+                          <a class="btn btn-warning" href="#!" role="button">Confirm</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Convert Modal -->
+    <div class="modal fade" id="convertCrypto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Convert</h5>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Convert Form -->
+                    <div class="input-group d-flex mb-1">
+                        <label class="form-label text-sm text-light">Wallet.</label>
+                        <div class="d-flex gap-3 align-items-center ms-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <label class="form-check-label text-light">
+                                Spot
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label text-light">
+                                Funding
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-bs p-2 bg-5">
+                        <div class="input-group">
+                            <label class="form-label crypt-grayscale-600">From</label>
+                            <label class="form-label ms-auto crypt-grayscale-600">Balance : <span class="text-primary">0 ADA</span></label>
+                        </div>
+                        <div class="input-group d-flex">
+                            <input type="email" class="form-control text-sm" placeholder="0.00">
+                            <div class="input-group-append input-group-text p-1">
+                                <select class="form-select text-sm crypt-grayscale-500">
+                                    <option selected>ADA</option>
+                                    <option value="1">BTC</option>
+                                    <option value="2">BNB</option>
+                                    <option value="3">ETH</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="form-label crypt-grayscale-600 mt-1">≈ $0.0</label>
+                    </div>
+                    <div class="input-group justify-content-center p-3">
+                        <img alt="" style="width:32px;" src="../static/images/icon/switch.svg">
+                    </div>
+                    <div class="card-bs p-2 bg-5">
+                        <div class="input-group">
+                            <label class="form-label crypt-grayscale-600">To</label>
+                            <label class="form-label ms-auto crypt-grayscale-600">Balance : <span class="text-primary">0 USDT</span></label>
+                        </div>
+                        <div class="input-group d-flex">
+                            <input type="email" class="form-control text-sm" placeholder="0.01 - 310000">
+                            <div class="input-group-append input-group-text p-1">
+                                <select class="form-select text-sm crypt-grayscale-500">
+                                    <option selected>USDT</option>
+                                    <option value="1">BTC</option>
+                                    <option value="2">BNB</option>
+                                    <option value="3">ETH</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label class="form-label crypt-grayscale-600 mt-1">≈ $0.0</label>
+                    </div>
+                    <div class="mt-2 text-sm">
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Rate: </p>
+                            <p class="crypt-grayscale-500">1 ADA ≈ 0.728877 USDT</p>
+                        </div>
+                    </div>
+                    <div class="d-grid mt-5 mb-3">
+                        <a class="btn btn-info" href="#!" role="button">Preview</a>
+                    </div>
+                </div>
+          </div>
+      </div>
+    </div>
+    <!-- Offcanvas Convert -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight">
+        <div class="offcanvas-header card-line">
+            <div class="d-flex flex-row gap-3">
+                <div>
+                    <img alt="" style="width:32px;" src="../static/images/coin/btc.svg">
+                </div>
+                <h5 class="crypt-grayscale-300">Bitcoin <span class="crypt-grayscale-600">BTC</span></h5>
+            </div>
+            <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column">
+                <h3 class="fw-bold crypt-grayscale-300">0.000000</h3>
+                <h6 class="crypt-grayscale-600">≈ $0.00</h6>
+                <a class="btn btn-editor btn-info mb-2" href="#" data-bs-toggle="modal" data-bs-target="#convertCrypto">Convert</a>
+                <h6 class="fw-bold crypt-grayscale-400 mt-4">Asset Distribution</h6>
+                <div class="row g-2 mt-1">
+                    <div class="col-6">
+                        <div class="card-bs card-border p-3 d-sm-flex flex-row align-items-center">
+                            <div class="row justify-content-between">
+                                <div class="d-flex flex-row gap-2">
+                                    <div>
+                                        <img alt="" style="width:20px;" src="../static/images/icon/spot.svg">
+                                    </div>
+                                    <p class="crypt-grayscale-300">Spot</p>
+                                </div>
+                                <h6 class="fw-bold crypt-grayscale-100">BTC/USDT</h6>
+                                <div class="d-flex flex-row gap-2">
+                                    <p class="crypt-grayscale-400">89259.95</p>
+                                    <p class="text-down">-2.30%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card-bs card-border p-3 d-sm-flex flex-row align-items-center">
+                            <div class="row justify-content-between">
+                                <div class="d-flex flex-row gap-2">
+                                    <div>
+                                        <img alt="" style="width:20px;" src="../static/images/icon/earn.svg">
+                                    </div>
+                                    <p class="crypt-grayscale-300">Earn</p>
+                                </div>
+                                <h6 class="fw-bold crypt-grayscale-100">BTC</h6>
+                                <div class="d-flex flex-row gap-2">
+                                    <p class="crypt-grayscale-400">APR up to</p>
+                                    <p class="text-up">211.39%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- History -->
+                <div class="table-responsive mt-1">
+                    <h6 class="fw-bold crypt-grayscale-300 mt-4">History</h6>
+                    <table class="table table-dark crypt-tab">
+                        <tbody>
+                            <tr>
+                                <td class="no-orders text-center">
+                                    <img src="../static/images/empty.svg" alt="no-orders">
+                                    <p class="crypt-grayscale-600 pb-4 ">Data of last 6 months</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Stake Modal -->
+    <div class="modal fade" id="stakeCrypto" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <h5 class="d-flex align-items-center gap-3 crypt-grayscale-100 mb-0">Stake ETH</h5>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--Stake Form -->
+                    <div class="input-group justify-content-center mb-4">
+                        <div class="d-flex flex-row align-items-center gap-2 circles gd-bg px-3 py-1">
+                            <label class="form-label text-light mb-0">1 ETH ≈ 0.94773528 WBETH</label>
+                            <img alt="" width="24" src="../static/images/icon/stake-change.svg">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="form-label crypt-grayscale-600">Stake Amount</label>
+                        <label class="form-label ms-auto crypt-grayscale-600">Balance : <span class="text-primary">0 ETH</span></label>
+                    </div>
+                    <div class="input-group d-flex">
+                        <input type="email" class="form-control text-sm" placeholder="Min 0.0001">
+                        <div class="input-group-append input-group-text p-1">
+                            <select class="form-select text-sm crypt-grayscale-500">
+                                <option selected>ETH</option>
+                                <option value="1">BTC</option>
+                                <option value="2">BNB</option>
+                                <option value="3">USDT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group justify-content-center p-3">
+                        <img alt="" style="width:32px;" src="../static/images/icon/stake-down.svg">
+                    </div>
+                    <div class="card-bs p-2 bg-5">
+                        <div class="input-group">
+                            <label class="form-label crypt-grayscale-600">Receive</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="--" disabled readonly>
+                            <span class="input-group-text fw-bold text-info">WBETH</span>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning d-flex mt-3 mb-4 p-2" role="alert">
+                        <svg class="flex-shrink-0 me-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
+                            <path d="M12 13.75C12.41 13.75 12.75 13.41 12.75 13V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V13C11.25 13.41 11.59 13.75 12 13.75Z" fill="currentColor"/>
+                            <path d="M12.92 15.6199C12.87 15.4999 12.8 15.3899 12.71 15.2899C12.61 15.1999 12.5 15.1299 12.38 15.0799C12.14 14.9799 11.86 14.9799 11.62 15.0799C11.5 15.1299 11.39 15.1999 11.29 15.2899C11.2 15.3899 11.13 15.4999 11.08 15.6199C11.03 15.7399 11 15.8699 11 15.9999C11 16.1299 11.03 16.2599 11.08 16.3799C11.13 16.5099 11.2 16.6099 11.29 16.7099C11.39 16.7999 11.5 16.8699 11.62 16.9199C11.74 16.9699 11.87 16.9999 12 16.9999C12.13 16.9999 12.26 16.9699 12.38 16.9199C12.5 16.8699 12.61 16.7999 12.71 16.7099C12.8 16.6099 12.87 16.5099 12.92 16.3799C12.97 16.2599 13 16.1299 13 15.9999C13 15.8699 12.97 15.7399 12.92 15.6199Z" fill="currentColor"/>
+                        </svg>
+                        <p class="mb-0">
+                            WBETH’s value increases over time as staking rewards accrue after launch. You will get back your initial ETH and earned rewards.
+                        </p>
+                    </div>
+                    <div class="mt-2 text-sm card-border p-2">
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Conversion Ratio</p>
+                            <p class="crypt-grayscale-500">1 ETH ≈ 0.94773528 WBETH</p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Reference APR</p>
+                            <p class="crypt-grayscale-500">2.82%</p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between">
+                            <p class="crypt-grayscale-500">Monthly Est. Reward</p>
+                            <p class="text-up">0 ETH</p>
+                        </div>
+                    </div>
+                    <div class="d-grid mt-5 mb-3">
+                        <a class="btn btn-warning" href="" role="button">Stake</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal (Connect Wallet) -->
+    <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex">
+                    <div>
+                        <h5 class="crypt-grayscale-100 fw-bold mb-0">Connect a wallet</h5>
+                        <p class="crypt-grayscale-500 mb-0">Choose your favourite wallet to log in.</p>
+                    </div>
+                    <button type="button" class="btn-close text-reset close-notify align-items-center justify-content-center" data-bs-dismiss="modal" aria-label="Close">
+                        <svg class="close-notify" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 4.5L4.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.5 4.5L13.5 13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <small class="crypt-grayscale-500">Popular wallet</small>
+                    <div class="flex mt-2">
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Metamask 
+                            <img src="../static/images/icon/metamask.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            WalletConnect 
+                            <img src="../static/images/icon/walletconnect.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Phantom 
+                            <img src="../static/images/icon/phantom.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Coinbase Wallet 
+                            <img src="../static/images/icon/coinbase.svg" alt="" width="32">
+                        </a>
+                        <a class="btn btn-dark d-flex justify-content-between align-items-center mb-2" href="#!">
+                            Rainbow 
+                            <img src="../static/images/icon/rainbow.svg" alt="" width="32">
+                        </a>
+                    </div>
+                    <div class="text-center mt-4 mb-4">
+                        <a class="text-link fs-6 crypt-grayscale-500 fw-medium " href="login.html">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.5 10.5V14.5H17.5C16.9696 14.5 16.4609 14.2893 16.0858 13.9142C15.7107 13.5391 15.5 13.0304 15.5 12.5C15.5 11.9696 15.7107 11.4609 16.0858 11.0858C16.4609 10.7107 16.9696 10.5 17.5 10.5H21.5ZM18 12.69C18.0149 12.6275 18.0149 12.5625 18 12.5C18.0008 12.4344 17.9879 12.3694 17.962 12.3091C17.9362 12.2489 17.898 12.1946 17.85 12.15C17.7565 12.0584 17.6309 12.0071 17.5 12.0071C17.3691 12.0071 17.2435 12.0584 17.15 12.15C17.102 12.1946 17.0638 12.2489 17.038 12.3091C17.0121 12.3694 16.9992 12.4344 17 12.5C16.9979 12.5658 17.0102 12.6312 17.0362 12.6916C17.0621 12.7521 17.1009 12.8062 17.15 12.85C17.1949 12.8978 17.2491 12.936 17.3093 12.962C17.3695 12.9881 17.4344 13.0015 17.5 13.0015C17.5656 13.0015 17.6305 12.9881 17.6907 12.962C17.7509 12.936 17.8051 12.8978 17.85 12.85C17.9154 12.8136 17.9679 12.7576 18 12.69Z" fill="#facc15"/>
+                                <path d="M18 12.5C18.0149 12.5625 18.0149 12.6275 18 12.69C17.9787 12.7524 17.9407 12.8078 17.89 12.85C17.8451 12.8978 17.7909 12.936 17.7307 12.962C17.6705 12.9881 17.6056 13.0015 17.54 13.0015C17.4744 13.0015 17.4095 12.9881 17.3493 12.962C17.2891 12.936 17.2349 12.8978 17.19 12.85C17.1336 12.8102 17.0872 12.7579 17.0542 12.6972C17.0213 12.6365 17.0027 12.569 17 12.5C16.9992 12.4344 17.0122 12.3694 17.038 12.3091C17.0638 12.2489 17.102 12.1947 17.15 12.15C17.2435 12.0584 17.3692 12.0071 17.5 12.0071C17.6309 12.0071 17.7566 12.0584 17.85 12.15C17.8981 12.1947 17.9362 12.2489 17.9621 12.3091C17.9879 12.3694 18.0008 12.4344 18 12.5Z" fill="currentColor"/>
+                                <path d="M18.5 20H5.5C4.83696 20 4.20107 19.7366 3.73223 19.2678C3.26339 18.7989 3 18.163 3 17.5V7.5C3 6.83696 3.26339 6.20107 3.73223 5.73223C4.20107 5.26339 4.83696 5 5.5 5H18.5C19.163 5 19.7989 5.26339 20.2678 5.73223C20.7366 6.20107 21 6.83696 21 7.5V10.5C21 10.6326 20.9473 10.7598 20.8536 10.8536C20.7598 10.9473 20.6326 11 20.5 11C20.3674 11 20.2402 10.9473 20.1464 10.8536C20.0527 10.7598 20 10.6326 20 10.5V7.5C20 7.10218 19.842 6.72064 19.5607 6.43934C19.2794 6.15804 18.8978 6 18.5 6H5.5C5.10218 6 4.72064 6.15804 4.43934 6.43934C4.15804 6.72064 4 7.10218 4 7.5V17.5C4 17.8978 4.15804 18.2794 4.43934 18.5607C4.72064 18.842 5.10218 19 5.5 19H18.5C18.8978 19 19.2794 18.842 19.5607 18.5607C19.842 18.2794 20 17.8978 20 17.5V14.5C20 14.3674 20.0527 14.2402 20.1464 14.1464C20.2402 14.0527 20.3674 14 20.5 14C20.6326 14 20.7598 14.0527 20.8536 14.1464C20.9473 14.2402 21 14.3674 21 14.5V17.5C21 18.163 20.7366 18.7989 20.2678 19.2678C19.7989 19.7366 19.163 20 18.5 20Z" fill="currentColor"/>
+                                <path d="M21.5 15.0001H17.5C16.837 15.0001 16.2011 14.7367 15.7323 14.2679C15.2634 13.799 15 13.1632 15 12.5001C14.9985 12.1706 15.0633 11.8441 15.1904 11.54C15.3175 11.2359 15.5044 10.9605 15.74 10.7301C15.9691 10.4961 16.243 10.3109 16.5455 10.1854C16.8479 10.06 17.1726 9.99694 17.5 10.0001H21.5C21.6326 10.0001 21.7598 10.0528 21.8536 10.1466C21.9473 10.2403 22 10.3675 22 10.5001V14.5001C22 14.6327 21.9473 14.7599 21.8536 14.8537C21.7598 14.9474 21.6326 15.0001 21.5 15.0001ZM17.5 11.0001C17.1038 11.0053 16.7253 11.165 16.4451 11.4452C16.1649 11.7254 16.0052 12.1039 16 12.5001C16 12.8979 16.1581 13.2795 16.4394 13.5608C16.7207 13.8421 17.1022 14.0001 17.5 14.0001H21V11.0001H17.5Z" fill="currentColor"/>
+                            </svg>
+                            I don't have a wallet
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex flex-column justify-content-center">
+                    <p class="text-sm crypt-grayscale-400">By connecting your wallet you agree to the</p>
+                    <a href="#" class="text-sm">Terms of Service</a>
+                </div>
+            </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid text-left text-lg-start crypt-footer mt-5 animation-element">
+        <div class="container mt-5 in-view">
+            <div class="row mt-5 pt-3">
+                <div class="col-12 col-sm-12 col-lg-4 pb-5">
+                    <!-- Content -->
+                    <div class="mb-4">
+                        <!-- Logo -->
+                        <div class="crypt-logo dark">
+                            <a href="template-1.html">
+                                <img src="../static/images/logo-dark.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="crypt-logo light">
+                            <a href="template-1.html">
+                                <img src="../static/images/logo.svg" alt="">
+                            </a>
+                        </div>
+                        <p class="card-text mt-2">Cryptocurrency Will Make You Feel Better.<br>- It's Like Heaven!</p>
+                    </div>
+                    <div class="text-left social-icons mt-4">
+                        <a href="" rel="nofollow" target="_blank">
+                            <img src="../static/images/social/x.svg" alt="" width="24">
+                        </a>
+                        <a href="" rel="nofollow" target="_blank">
+                            <img src="../static/images/social/facebook.svg" alt="" width="24">
+                        </a>
+                        <a href="" rel="nofollow" target="_blank">
+                            <img src="../static/images/social/instagram.svg" alt="" width="24">
+                        </a>
+                        <a href="" rel="nofollow" target="_blank">
+                            <img src="../static/images/social/tiktok.svg" alt="" width="24">
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-12 col-sm-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-6 col-md-3 col-sm-6 col-lg-3 text-link mb-3">
+                            <!-- Links -->
+                            <h6 class="mb-3 crypt-grayscale-300">Products</h6>
+                            <p><a href="#!" class="text-reset">Supercharts</a></p>
+                            <p><a href="#!" class="text-reset">Stock market</a></p>
+                            <p><a href="#!" class="text-reset">Forex screener</a></p>
+                            <p><a href="#!" class="text-reset">Crypto market</a></p>
+                        </div>
+                        <div class="col-6 col-md-3 col-sm-6 col-lg-3 text-link mb-3">
+                            <!-- Links -->
+                            <h6 class="mb-3 crypt-grayscale-300">For Business</h6>
+                            <p><a href="#!" class="text-reset">Widgets</a></p>
+                            <p><a href="#!" class="text-reset">Advertising</a></p>
+                            <p><a href="#!" class="text-reset">Script libraries</a></p>
+                            <p><a href="#!" class="text-reset">Lightweight Charts™</a></p>
+                        </div>
+                        <div class="col-6 col-md-3 col-sm-6 col-lg-3 text-link mb-3">
+                            <!-- Links -->
+                            <h6 class="mb-3 crypt-grayscale-300">Buy</h6>
+                            <p><a href="#!" class="text-reset">Buy Bitcoin</a></p>
+                            <p><a href="#!" class="text-reset">Buy Ethereum</a></p>
+                            <p><a href="#!" class="text-reset">Buy USDT</a></p>
+                            <p><a href="#!" class="text-reset">Buy Cardano</a></p>
+                        </div>
+                        <div class="col-6 col-md-3 col-sm-6 col-lg-3 text-link mb-3">
+                            <!-- Links -->
+                            <h6 class="mb-3 crypt-grayscale-300">Community</h6>
+                            <p><a href="#!" class="text-reset">Refer a friend</a></p>
+                            <p><a href="#!" class="text-reset">Scripts</a></p>
+                            <p><a href="#!" class="text-reset">Moderators</a></p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <!-- Copyright -->
+            <div class="text-center p-4 mt-4 crypt-footer-copyright">
+                Copyright © 2024 - Made by <a class="fw-bold link" href="https://tophivetheme.com" rel="nofollow" target="_blank">Tophive</a>
+            </div>
+        </div>
+    
+    </footer>
+
+    <!-- Main Content End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="../static/js/gsap.js"></script>
+    <script src="../static/js/particle-canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
+</html>
